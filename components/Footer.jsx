@@ -7,17 +7,14 @@ export default function Footer() {
     <footer className="bg-brand-navy-dark text-white">
       <div className="container-x py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
         <div>
-          <div className="flex items-center gap-3 mb-6">
+          <div className="bg-white/5 rounded-2xl p-4 inline-block mb-6">
             <Image
               src="/brand/logo.svg"
               alt="English Solution"
-              width={56}
-              height={56}
+              width={180}
+              height={72}
+              className="h-16 w-auto"
             />
-            <div className="font-serif font-bold leading-tight">
-              <div>ENGLISH</div>
-              <div>SOLUTION</div>
-            </div>
           </div>
 
           <p className="text-white/70 leading-relaxed">

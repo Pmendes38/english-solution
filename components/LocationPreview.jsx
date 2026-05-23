@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { contact, schedule } from "@/data/site";
+import Reveal from "@/components/motion/Reveal";
 
 export default function LocationPreview() {
   return (
     <section id="localizacao" className="py-24 bg-white">
       <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
-        <div>
+        <Reveal>
           <span className="eyebrow">Onde estamos</span>
           <h2 className="heading-display text-4xl lg:text-5xl mt-4">
             Venha conhecer a escola.
@@ -81,9 +82,9 @@ export default function LocationPreview() {
               Ver página completa
             </Link>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="relative">
+        <Reveal delay={0.15} className="relative">
           <div className="absolute -top-5 -left-5 w-full h-full border-4 border-brand-navy rounded-[32px]" />
           <iframe
             src={contact.mapsEmbedSrc}
@@ -93,7 +94,7 @@ export default function LocationPreview() {
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

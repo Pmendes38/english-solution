@@ -160,6 +160,8 @@ export const courses = [
     ],
     duration: "2 a 4 semanas",
     format: "Presencial em Valparaíso de Goiás",
+    image:
+      "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "business-english",
@@ -178,6 +180,8 @@ export const courses = [
     ],
     duration: "Trimestres flexíveis",
     format: "Presencial ou online",
+    image:
+      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "curso-online",
@@ -196,6 +200,8 @@ export const courses = [
     ],
     duration: "Mensal recorrente",
     format: "100% online ao vivo",
+    image:
+      "https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "ingles-para-empresas",
@@ -214,6 +220,8 @@ export const courses = [
     ],
     duration: "Contrato sob medida",
     format: "In company ou online",
+    image:
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "aulas-particulares",
@@ -232,6 +240,8 @@ export const courses = [
     ],
     duration: "Pacotes a partir de 4 aulas",
     format: "Presencial ou online",
+    image:
+      "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "iniciantes",
@@ -250,6 +260,8 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
+    image:
+      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "intermediario",
@@ -268,6 +280,8 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
+    image:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "avancado",
@@ -286,6 +300,8 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
+    image:
+      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=900&auto=format&fit=crop",
   },
 ];
 

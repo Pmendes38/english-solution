@@ -48,6 +48,17 @@ export default async function CoursePage({ params }) {
         </div>
       </PageHeader>
 
+      <section className="bg-white">
+        <div className="container-x -mt-12 lg:-mt-16 relative z-10">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={course.image}
+            alt={course.title}
+            className="w-full h-64 lg:h-96 object-cover rounded-3xl shadow-2xl border border-slate-200"
+          />
+        </div>
+      </section>
+
       <section className="py-20 bg-white">
         <div className="container-x grid lg:grid-cols-3 gap-12">
           <div className="lg:col-span-2">

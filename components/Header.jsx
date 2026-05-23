@@ -14,20 +14,17 @@ export default function Header() {
       <div className="container-x flex items-center justify-between py-4 gap-6">
         <Link
           href="/"
-          className="flex items-center gap-3 flex-shrink-0"
+          className="flex items-center flex-shrink-0"
           aria-label="English Solution — Home"
         >
           <Image
             src="/brand/logo.svg"
             alt="English Solution"
-            width={48}
-            height={48}
+            width={140}
+            height={56}
             priority
+            className="h-12 w-auto"
           />
-          <span className="hidden sm:flex flex-col leading-tight font-serif font-bold text-brand-navy">
-            <span className="text-base tracking-wide">ENGLISH</span>
-            <span className="text-base tracking-wide">SOLUTION</span>
-          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-7 text-sm">

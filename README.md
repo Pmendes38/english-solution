@@ -73,15 +73,23 @@ DEV/
 
 Quase todo conteúdo (textos, cursos, depoimentos, contatos, FAQ) vive em [`data/site.js`](data/site.js). Edite lá e o site inteiro reflete.
 
-### Google Reviews — integração real
+### Google Reviews — integração real (Places API)
 
-A home usa um bloco estático com depoimentos manuais como fallback. Para puxar reviews reais do Google, defina a variável de ambiente:
+O componente [`GoogleReviews.jsx`](components/GoogleReviews.jsx) é um Server Component que busca avaliações reais do Google via **Places API (New)**. Enquanto as variáveis não estiverem definidas, ele exibe depoimentos de fallback.
+
+Para ativar as avaliações reais:
+
+1. Crie um projeto no [Google Cloud Console](https://console.cloud.google.com/) e habilite a **Places API (New)**.
+2. Gere uma API key e restrinja por **Places API**.
+3. Encontre o **Place ID** da escola em [Place ID Finder](https://developers.google.com/maps/documentation/places/web-service/place-id).
+4. Crie um arquivo `.env.local` na raiz:
 
 ```env
-NEXT_PUBLIC_GOOGLE_REVIEWS_EMBED='<iframe src="..."></iframe>'
+GOOGLE_PLACES_API_KEY=AIza...sua-chave
+GOOGLE_PLACE_ID=ChIJ...id-do-lugar
 ```
 
-Funciona com qualquer widget de terceiros (Elfsight, Trustindex, EmbedSocial, etc). Para usar a API oficial do Google (Places API), crie uma chave no Google Cloud e troque o componente [`GoogleReviews.jsx`](components/GoogleReviews.jsx) para fazer fetch dos reviews.
+As avaliações são revalidadas a cada 6 horas (cache do Next.js). A lógica de fetch fica em [`lib/google-reviews.js`](lib/google-reviews.js).
 
 ### Depoimentos em vídeo
 

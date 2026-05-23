@@ -1,4 +1,5 @@
 import { contact } from "@/data/site";
+import Reveal from "@/components/motion/Reveal";
 
 export default function CTA() {
   return (
@@ -9,7 +10,7 @@ export default function CTA() {
       <div className="absolute -top-24 -left-24 w-72 h-72 bg-brand-red rounded-full blur-3xl opacity-30" />
       <div className="absolute -bottom-24 -right-24 w-72 h-72 bg-brand-navy-light rounded-full blur-3xl opacity-30" />
 
-      <div className="container-x relative z-10 max-w-4xl">
+      <Reveal className="container-x relative z-10 max-w-4xl">
         <span className="eyebrow text-brand-red">Aula experimental gratuita</span>
         <h2 className="font-serif font-bold text-4xl lg:text-6xl leading-tight mt-4">
           Seu inglês começa agora.
@@ -38,7 +39,7 @@ export default function CTA() {
             Falar no WhatsApp
           </a>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

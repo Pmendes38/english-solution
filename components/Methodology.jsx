@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { methodologyPillars } from "@/data/site";
+import Reveal from "@/components/motion/Reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 
 export default function Methodology() {
   return (
@@ -12,7 +14,7 @@ export default function Methodology() {
 
       <div className="container-x relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="lg:sticky lg:top-28">
+          <Reveal className="lg:sticky lg:top-28">
             <span className="eyebrow text-brand-red">Metodologia</span>
             <h2 className="font-serif font-bold text-4xl lg:text-6xl mt-4 leading-tight">
               Inglês vivido na prática.
@@ -22,34 +24,30 @@ export default function Methodology() {
               aprende conversando, ouvindo, interagindo e praticando desde a
               primeira aula.
             </p>
-            <Link
-              href="/metodologia"
-              className="btn-ghost-light mt-8"
-            >
+            <Link href="/metodologia" className="btn-ghost-light mt-8">
               Conhecer a metodologia
             </Link>
-          </div>
+          </Reveal>
 
-          <div className="grid gap-4">
+          <StaggerGroup className="grid gap-4">
             {methodologyPillars.map((item, i) => (
-              <div
-                key={item.title}
-                className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-colors"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center font-serif font-bold text-white flex-shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="mt-2 text-white/70 leading-relaxed">
-                      {item.description}
-                    </p>
+              <StaggerItem key={item.title}>
+                <div className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-colors">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center font-serif font-bold text-white flex-shrink-0">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold">{item.title}</h3>
+                      <p className="mt-2 text-white/70 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </section>

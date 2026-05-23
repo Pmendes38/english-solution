@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { videoTestimonials } from "@/data/site";
 
 function VideoCard({ item }) {
@@ -67,7 +68,13 @@ export default function VideoTestimonials() {
   return (
     <section className="py-24 bg-brand-cream">
       <div className="container-x">
-        <div className="text-center mb-12 max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-12 max-w-3xl mx-auto"
+        >
           <span className="eyebrow">Depoimentos em vídeo</span>
           <h2 className="heading-display text-4xl lg:text-5xl mt-4">
             Ouça quem já destravou o inglês com a gente.
@@ -76,13 +83,34 @@ export default function VideoTestimonials() {
             Histórias reais de alunos que começaram travados e hoje conversam
             com naturalidade.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.12 } },
+          }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {videoTestimonials.map((item) => (
-            <VideoCard key={item.name} item={item} />
+            <motion.div
+              key={item.name}
+              variants={{
+                hidden: { opacity: 0, y: 28 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+                },
+              }}
+            >
+              <VideoCard item={item} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

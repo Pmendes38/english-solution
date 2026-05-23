@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { faqs } from "@/data/site";
 
 export default function FAQ({ items, showAllLink = true }) {
@@ -11,19 +12,42 @@ export default function FAQ({ items, showAllLink = true }) {
   return (
     <section id="faq" className="py-24 bg-white">
       <div className="container-x max-w-4xl">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="text-center mb-12"
+        >
           <span className="eyebrow">FAQ</span>
           <h2 className="heading-display text-4xl lg:text-5xl mt-4">
             Dúvidas frequentes
           </h2>
-        </div>
+        </motion.div>
 
-        <div className="space-y-4">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.06 } },
+          }}
+          className="space-y-4"
+        >
           {list.map((item, index) => {
             const isOpen = openIndex === index;
             return (
-              <div
+              <motion.div
                 key={item.question}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
+                  },
+                }}
                 className="border border-slate-200 rounded-2xl bg-brand-cream/40 overflow-hidden"
               >
                 <button
@@ -45,15 +69,25 @@ export default function FAQ({ items, showAllLink = true }) {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="px-6 pb-6 text-slate-600 leading-relaxed">
-                    {item.answer}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
         {showAllLink && (
           <div className="mt-10 text-center">
