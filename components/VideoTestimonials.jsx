@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { videoTestimonials } from "@/data/site";
 
 function VideoCard({ item }) {
@@ -10,14 +11,12 @@ function VideoCard({ item }) {
 
   const handlePlay = () => {
     if (!item.videoSrc) return;
-    const v = videoRef.current;
-    if (!v) return;
-    v.play();
+    videoRef.current?.play();
     setPlaying(true);
   };
 
   return (
-    <article className="group relative rounded-3xl overflow-hidden bg-[var(--bg-elevated)] aspect-[3/4] border border-white/5">
+    <article className="group relative rounded-2xl overflow-hidden bg-[var(--bg-elevated)] aspect-[4/5] border border-white/5">
       {item.videoSrc ? (
         <video
           ref={videoRef}
@@ -27,31 +26,31 @@ function VideoCard({ item }) {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         />
-      ) : (
+      ) : item.poster ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           src={item.poster}
           alt={item.name}
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-      )}
+      ) : null}
 
       {!playing && (
         <button
           type="button"
           onClick={handlePlay}
           disabled={!item.videoSrc}
-          className="absolute inset-0 flex flex-col items-center justify-end p-6 bg-gradient-to-t from-[var(--bg-base)]/95 via-[var(--bg-base)]/30 to-transparent text-white"
+          className="absolute inset-0 flex flex-col items-center justify-end p-5 bg-gradient-to-t from-[var(--bg-base)]/95 via-[var(--bg-base)]/40 to-transparent text-white"
           aria-label={`Reproduzir depoimento ${item.name}`}
         >
-          <span className="w-16 h-16 rounded-full bg-[var(--accent)] text-white flex items-center justify-center shadow-2xl mb-auto mt-auto group-hover:scale-110 transition-transform">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" aria-hidden="true">
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-[var(--accent)] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+            <svg width="20" height="20" viewBox="0 0 22 22" fill="currentColor" aria-hidden="true">
               <path d="M5 3l14 8-14 8V3z" />
             </svg>
           </span>
           <div className="text-left w-full">
-            <div className="font-bold text-lg">{item.name}</div>
-            <div className="text-sm text-white/70">{item.role}</div>
+            <div className="font-bold">{item.name}</div>
+            <div className="text-xs text-white/70">{item.role}</div>
           </div>
         </button>
       )}
@@ -61,23 +60,29 @@ function VideoCard({ item }) {
 
 export default function VideoTestimonials() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-16 lg:py-20">
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12 max-w-3xl mx-auto"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
         >
-          <span className="eyebrow mx-auto">DEPOIMENTOS EM VÍDEO</span>
-          <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
-            Ouça quem já destravou o inglês com a gente.
-          </h2>
-          <p className="mt-5 text-[var(--text-secondary)] text-lg">
-            Histórias reais de alunos que começaram travados e hoje conversam
-            com naturalidade.
-          </p>
+          <div className="max-w-xl">
+            <span className="eyebrow">HISTÓRIAS REAIS</span>
+            <h2 className="heading-display mt-4 text-3xl lg:text-4xl">
+              Ouça quem já destravou
+              <br /> o inglês com a gente
+            </h2>
+            <p className="mt-4 text-[var(--text-secondary)]">
+              Alunos reais. Resultados reais.
+            </p>
+          </div>
+
+          <a href="#depoimentos" className="btn-secondary self-start text-sm">
+            Ver mais depoimentos →
+          </a>
         </motion.div>
 
         <motion.div

@@ -8,62 +8,58 @@ const pillars = [
   {
     icon: ASSETS.icons.conversas,
     title: "Conversação desde a primeira aula",
-    description: "Você fala inglês desde o início do curso.",
+    description: "Sem meses decorando regras. Você fala, ouve, interage e ganha confiança desde o início.",
   },
   {
     icon: ASSETS.icons.rede,
-    title: "Experiências práticas e imersivas",
-    description: "Aulas dinâmicas com temas do mundo real.",
+    title: "Experiência prática e imersiva",
+    description: "Atividades em grupo, simulações reais e situações do dia a dia para vivenciar o idioma.",
   },
   {
     icon: ASSETS.icons.pessoas,
-    title: "Professores especialistas e próximos",
-    description: "Acompanhamento humanizado.",
+    title: "Aulas dinâmicas e humanas",
+    description: "Professores próximos, turmas reduzidas e ambiente acolhedor para você se sentir à vontade.",
   },
   {
     icon: ASSETS.icons.livro,
     title: "Sem dependência de livros caros",
-    description: "Todo o material incluso e atualizado.",
+    description: "Material próprio, atualizado e prático. Você não precisa comprar livros importados todo semestre.",
   },
   {
     icon: ASSETS.icons.alvo,
-    title: "Aulas ao vivo em pequenos grupos",
-    description: "Mais prática, mais atenção, mais resultados.",
+    title: "Foco em confiança para falar",
+    description: "Mais do que gramática: trabalhamos a perda do medo de errar e a fluência real de comunicação.",
   },
 ];
 
 export default function Methodology() {
   return (
-    <section id="metodologia" className="py-20 lg:py-28">
-      <div className="container-x grid lg:grid-cols-2 gap-14 items-start">
+    <section id="metodologia" className="py-16 lg:py-24">
+      <div className="container-x grid lg:grid-cols-[1fr_1.15fr] gap-12 items-start">
         <Reveal>
           <span className="eyebrow">NOSSA METODOLOGIA</span>
           <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
             Inglês vivido na prática.
           </h2>
           <p className="mt-6 text-[var(--text-secondary)] leading-relaxed">
-            Aqui você não passa meses decorando regras antes de falar. Você
-            aprende conversando, ouvindo, interagindo e praticando desde a
-            primeira aula.
+            Aqui você não passa meses decorando regras antes de falar.
+            Você aprende conversando, ouvindo, interagindo e praticando
+            desde a primeira aula.
           </p>
-          <Link
-            href="/metodologia"
-            className="inline-flex items-center gap-2 mt-8 text-[var(--accent)] font-bold hover:gap-3 transition-all"
-          >
-            Entenda como funciona
-            <span aria-hidden="true">→</span>
+          <Link href="/metodologia" className="btn-secondary mt-8 text-sm">
+            Entenda como funciona →
           </Link>
         </Reveal>
 
-        <StaggerGroup className="flex flex-col gap-4">
+        <StaggerGroup className="flex flex-col gap-3">
           {pillars.map((p) => (
             <StaggerItem key={p.title}>
-              <div className="flex items-start gap-4 bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-5 hover:bg-[var(--bg-overlay)] transition-colors">
-                <div className="w-12 h-12 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0">
-                  <Image src={p.icon} alt="" width={28} height={28} />
+              <div className="flex items-start gap-4 bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-5 hover:border-white/15 transition-colors">
+                <div className="w-11 h-11 rounded-lg bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
+                  <Image src={p.icon} alt="" width={26} height={26} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-white text-lg">{p.title}</h3>
+                  <h3 className="font-bold text-white text-base">{p.title}</h3>
                   <p className="text-[var(--text-secondary)] text-sm mt-1 leading-relaxed">
                     {p.description}
                   </p>

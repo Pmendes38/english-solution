@@ -29,9 +29,10 @@ export const schedule = [
 ];
 
 export const heroStats = [
-  { value: "190+", label: "avaliações 5 estrelas" },
-  { value: "5.0", label: "nota média no Google" },
-  { value: "100%", label: "foco em conversação" },
+  { iconKey: "pessoas", value: "+1.000", label: "alunos formados" },
+  { iconKey: "estrela", value: "5.0", label: "no Google" },
+  { iconKey: "conversas", value: "100%", label: "foco em conversação" },
+  { iconKey: "shield", value: "Método exclusivo", label: "com resultados comprovados" },
 ];
 
 export const reviews = [
@@ -225,21 +226,21 @@ export const reviews = [
 
 export const videoTestimonials = [
   {
-    name: "Lucas Andrade",
-    role: "Em breve",
-    poster: "/brand/photos/depoimento-1.png",
-    videoSrc: "",
-  },
-  {
-    name: "Marina Costa",
-    role: "Em breve",
+    name: "Lucas A.",
+    role: "Estudante de TI · Inglês para o trabalho",
     poster: "/brand/photos/depoimento-2.png",
     videoSrc: "",
   },
   {
-    name: "Rafael Souza",
-    role: "Em breve",
+    name: "Marina C.",
+    role: "Estudante de TI · Inglês para o trabalho",
     poster: "/brand/photos/depoimento-3.png",
+    videoSrc: "",
+  },
+  {
+    name: "Rafael S.",
+    role: "Estudante de TI · Inglês para o trabalho",
+    poster: "/brand/photos/depoimento-4.png",
     videoSrc: "",
   },
 ];
@@ -428,7 +429,7 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
-    image: "/brand/photos/cursos/iniciantes.png",
+    image: "/brand/photos/cursos/geral.png",
     tag: "INICIANTES",
     iconKey: "livro",
   },
@@ -449,7 +450,7 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
-    image: "/brand/photos/cursos/intermediario-avancado.png",
+    image: "/brand/photos/cursos/geral.png",
     tag: "INTERMEDIÁRIO",
     iconKey: "conversas",
   },
@@ -470,7 +471,7 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
-    image: "/brand/photos/cursos/preparatorios.png",
+    image: "/brand/photos/cursos/business.png",
     tag: "AVANÇADO",
     iconKey: "shield",
   },
@@ -478,36 +479,65 @@ export const courses = [
 
 export const featuredCourses = [
   {
-    slug: "intermediario",
-    tag: "INGLÊS GERAL",
-    title: "Do básico ao avançado com foco em fluência.",
-    image: "/brand/photos/cursos/intermediario-avancado.png",
-  },
-  {
-    slug: "intensivo-de-ferias",
-    tag: "INGLÊS PARA VIAGENS",
-    title: "Viaje com confiança e aproveite cada experiência.",
-    image: "/brand/photos/cursos/viagens.png",
-    badge: "MAIS PROCURADO",
-  },
-  {
     slug: "business-english",
-    tag: "INGLÊS PARA NEGÓCIOS",
+    tag: "Business English",
     title: "Comunicação eficaz para o ambiente corporativo.",
     image: "/brand/photos/cursos/business.png",
   },
   {
-    slug: "avancado",
-    tag: "PREPARATÓRIOS",
-    title: "Prepare-se para exames e conquiste novas oportunidades.",
-    image: "/brand/photos/cursos/preparatorios.png",
+    slug: "intermediario",
+    tag: "Inglês Geral",
+    title: "Do básico ao avançado com fluência para todas as idades.",
+    image: "/brand/photos/cursos/geral.png",
+  },
+  {
+    slug: "intensivo-de-ferias",
+    tag: "Inglês para Viagens",
+    title: "Viaje com segurança e comunique-se em qualquer lugar do mundo.",
+    image: "/brand/photos/cursos/viagens.png",
+  },
+  {
+    slug: "ingles-para-empresas",
+    tag: "English in Company",
+    title: "Para times que precisam falar inglês no trabalho.",
+    image: "/brand/photos/cursos/empresas.png",
   },
 ];
 
 export const experienceImages = [
-  "/brand/photos/comunidade-1.png",
-  "/brand/photos/comunidade-2.png",
-  "/brand/photos/comunidade-3.png",
+  "/brand/photos/comunidade-1.jpg",
+  "/brand/photos/comunidade-2.jpg",
+  "/brand/photos/comunidade-3.jpg",
+];
+
+export const methodologyPillarIcons = {
+  "Conversação desde a primeira aula": "conversas",
+  "Experiência prática e imersiva": "rede",
+  "Aulas dinâmicas e humanas": "pessoas",
+  "Sem dependência de livros caros": "livro",
+  "Foco em confiança para falar": "alvo",
+};
+
+export const differentialsHome = [
+  { icon: "pessoas", label: "Turmas reduzidas e personalizadas" },
+  { icon: "ambiente", label: "Ambiente moderno e acolhedor" },
+  { icon: "resultados", label: "Resultados rápidos e comprovados" },
+  { icon: "atendimento", label: "Atendimento próximo e humanizado" },
+];
+
+export const communityBenefits = [
+  {
+    title: "Aulas de conversação toda semana",
+    description: "Para fixar, fazer amigos e perder o medo.",
+  },
+  {
+    title: "Imersão cultural",
+    description: "Ambiente que aproxima você do mundo real.",
+  },
+  {
+    title: "Ambiente que motiva",
+    description: "Energia positiva para você evoluir sempre.",
+  },
 ];
 
 export const faqs = [

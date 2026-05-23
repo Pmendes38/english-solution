@@ -1,10 +1,9 @@
 import Hero from "@/components/Hero";
 import MetricsStrip from "@/components/MetricsStrip";
-import FeaturedCourses from "@/components/FeaturedCourses";
-import FeaturedTestimonial from "@/components/FeaturedTestimonial";
 import GoogleReviews from "@/components/GoogleReviews";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import Methodology from "@/components/Methodology";
+import FeaturedCourses from "@/components/FeaturedCourses";
 import Differentials from "@/components/Differentials";
 import Community from "@/components/Community";
 import LocationPreview from "@/components/LocationPreview";
@@ -16,11 +15,10 @@ export default function HomePage() {
     <>
       <Hero />
       <MetricsStrip />
-      <FeaturedCourses />
-      <FeaturedTestimonial />
       <GoogleReviews />
       <VideoTestimonials />
       <Methodology />
+      <FeaturedCourses />
       <Differentials />
       <Community />
       <LocationPreview />

@@ -5,23 +5,23 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { faqs } from "@/data/site";
 
-export default function FAQ({ items, showAllLink = true }) {
-  const list = items ?? faqs;
-  const [openIndex, setOpenIndex] = useState(0);
+export default function FAQ({ items, showAllLink = true, max = 3 }) {
+  const list = items ?? (showAllLink ? faqs.slice(0, max) : faqs);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
-    <section id="faq" className="py-20 lg:py-28">
-      <div className="container-x max-w-4xl">
+    <section id="faq" className="py-16 lg:py-20">
+      <div className="container-x max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <span className="eyebrow mx-auto">DÚVIDAS FREQUENTES</span>
-          <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
-            Perguntas que recebemos sempre.
+          <span className="eyebrow mx-auto">DÚVIDAS RELEVANTES</span>
+          <h2 className="heading-display mt-4 text-3xl lg:text-4xl">
+            Perguntas que sempre recebemos
           </h2>
         </motion.div>
 
@@ -50,14 +50,14 @@ export default function FAQ({ items, showAllLink = true }) {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                   aria-expanded={isOpen}
-                  className="w-full text-left p-6 flex items-start justify-between gap-4"
+                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4"
                 >
-                  <h3 className="font-bold text-white text-base lg:text-lg">
+                  <h3 className="text-white text-sm lg:text-base">
                     {item.question}
                   </h3>
                   <span
                     aria-hidden="true"
-                    className={`text-[var(--accent)] text-2xl font-bold transition-transform flex-shrink-0 leading-none ${
+                    className={`text-[var(--accent)] text-xl font-bold transition-transform flex-shrink-0 leading-none ${
                       isOpen ? "rotate-45" : ""
                     }`}
                   >
@@ -74,7 +74,7 @@ export default function FAQ({ items, showAllLink = true }) {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-[var(--text-secondary)] leading-relaxed">
+                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed">
                         {item.answer}
                       </div>
                     </motion.div>
@@ -87,7 +87,7 @@ export default function FAQ({ items, showAllLink = true }) {
 
         {showAllLink && (
           <div className="mt-10 text-center">
-            <Link href="/duvidas" className="btn-secondary">
+            <Link href="/duvidas" className="btn-secondary text-sm">
               Ver todas as perguntas →
             </Link>
           </div>
