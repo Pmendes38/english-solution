@@ -101,7 +101,7 @@ export default function Hero() {
             className="absolute -bottom-4 right-4 lg:right-8 z-20 bg-white rounded-2xl shadow-2xl p-4 flex items-center gap-3 max-w-[260px]"
           >
             <div className="w-11 h-11 rounded-xl bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
-              <Image src={ASSETS.icons.calendario} alt="" width={22} height={22} className="invert brightness-0" />
+              <Image src={ASSETS.icons.calendario} alt="" width={26} height={26} />
             </div>
             <div className="leading-tight">
               <div className="text-[10px] uppercase tracking-widest text-[var(--accent)] font-bold">

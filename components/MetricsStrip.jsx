@@ -20,8 +20,8 @@ const metrics = [
   },
   {
     icon: ASSETS.icons.shield,
-    value: "Método exclusivo",
-    label: "com resultados comprovados",
+    value: "Método",
+    label: "exclusivo e comprovado",
   },
 ];
 
@@ -35,13 +35,15 @@ export default function MetricsStrip() {
               key={m.label}
               className="flex flex-col items-center text-center px-4 py-4 lg:py-0"
             >
-              <Image
-                src={m.icon}
-                alt=""
-                width={48}
-                height={48}
-                className="h-12 w-12 mb-3"
-              />
+              <div className="w-14 h-14 rounded-2xl bg-[var(--brand-blue)] flex items-center justify-center mb-4 shadow-sm">
+                <Image
+                  src={m.icon}
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="h-9 w-9"
+                />
+              </div>
               <div className="text-[var(--brand-gray-dark)] font-serif font-bold text-2xl lg:text-3xl leading-tight">
                 {m.value}
               </div>
