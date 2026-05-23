@@ -1,6 +1,6 @@
-# English Solution — Site Institucional
+# English Solution | Site Institucional
 
-Site institucional da **English Solution** — escola de inglês em Valparaíso de Goiás.
+Site institucional da **English Solution**, escola de inglês em Valparaíso de Goiás.
 Construído em **Next.js 15 (App Router) + Tailwind CSS**, com tipografia e cores do brandbook oficial.
 
 > Tagline da marca: _"Você fala inglês desde o primeiro dia."_
@@ -73,7 +73,7 @@ DEV/
 
 Quase todo conteúdo (textos, cursos, depoimentos, contatos, FAQ) vive em [`data/site.js`](data/site.js). Edite lá e o site inteiro reflete.
 
-### Google Reviews — integração real (Places API)
+### Google Reviews: integração real (Places API)
 
 O componente [`GoogleReviews.jsx`](components/GoogleReviews.jsx) é um Server Component que busca avaliações reais do Google via **Places API (New)**. Enquanto as variáveis não estiverem definidas, ele exibe depoimentos de fallback.
 
@@ -113,4 +113,4 @@ npm start
 
 ## Deploy
 
-Pronto para deploy na Vercel — basta importar o repositório.
+Pronto para deploy na Vercel, basta importar o repositório.

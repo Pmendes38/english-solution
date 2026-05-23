@@ -33,7 +33,7 @@ export default function LocationPreview() {
               <ul className="mt-1 space-y-1">
                 {schedule.map((s) => (
                   <li key={s.label} className="font-semibold text-brand-navy">
-                    {s.label} —{" "}
+                    {s.label}:{" "}
                     <span className="font-normal text-slate-600">{s.value}</span>
                   </li>
                 ))}

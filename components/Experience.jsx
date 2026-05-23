@@ -13,7 +13,7 @@ export default function Experience() {
           </h2>
           <p className="mt-5 text-slate-600 text-lg">
             Eventos, conversation clubs e imersões para você vivenciar o
-            idioma — não só estudar.
+            idioma, não só estudar.
           </p>
         </Reveal>
 

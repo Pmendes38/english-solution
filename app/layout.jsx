@@ -17,7 +17,7 @@ const tinos = Tinos({
 
 export const metadata = {
   title: {
-    default: "English Solution — Você fala inglês desde o primeiro dia",
+    default: "English Solution | Você fala inglês desde o primeiro dia",
     template: "%s | English Solution",
   },
   description:
@@ -28,7 +28,7 @@ export const metadata = {
     shortcut: "/brand/logo.png",
   },
   openGraph: {
-    title: "English Solution — Você fala inglês desde o primeiro dia",
+    title: "English Solution | Você fala inglês desde o primeiro dia",
     description:
       "Aprenda inglês conversando. Sem livros caros. Aula experimental gratuita.",
     type: "website",

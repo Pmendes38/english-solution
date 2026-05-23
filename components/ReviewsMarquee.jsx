@@ -122,7 +122,7 @@ export default function ReviewsMarquee({ reviews }) {
   // Triplicate so the loop is seamless even with few reviews
   const loop = [...reviews, ...reviews, ...reviews];
 
-  // Speed: ~25s per "set" — adjust to taste
+  // Speed: ~25s per "set"; adjust to taste
   const setWidth = reviews.length * 396; // approx card+gap width
   const duration = Math.max(20, reviews.length * 6);
 

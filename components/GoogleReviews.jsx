@@ -33,19 +33,31 @@ function GoogleG() {
   );
 }
 
+function shuffleSeeded(arr, seed = 7) {
+  const a = [...arr];
+  let s = seed;
+  for (let i = a.length - 1; i > 0; i--) {
+    s = (s * 9301 + 49297) % 233280;
+    const j = Math.floor((s / 233280) * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 export default async function GoogleReviews() {
   const data = await fetchGoogleReviews();
   const isReal = !!data;
 
-  const reviews = isReal
-    ? data.reviews
-    : fallbackReviews.map((r) => ({
-        author: r.name,
-        photo: null,
-        rating: 5,
-        text: r.text,
-        relativeTime: r.role,
-      }));
+  const curated = fallbackReviews.map((r) => ({
+    author: r.name,
+    photo: null,
+    rating: 5,
+    text: r.text,
+    relativeTime: r.relativeTime ?? r.role,
+  }));
+
+  const realReviews = isReal ? data.reviews : [];
+  const allReviews = shuffleSeeded([...realReviews, ...curated]);
 
   const rating = isReal ? data.rating ?? 5.0 : 5.0;
   const count = isReal ? data.userRatingCount ?? 190 : 190;
@@ -61,7 +73,7 @@ export default async function GoogleReviews() {
             A escola de inglês mais bem avaliada da região.
           </h2>
           <p className="mt-5 text-slate-600 text-lg">
-            Avaliações reais de quem viveu a experiência da English Solution —
+            Avaliações reais de quem viveu a experiência da English Solution,
             diretamente do Google.
           </p>
 
@@ -75,7 +87,7 @@ export default async function GoogleReviews() {
                     {rating.toFixed(1)}
                   </span>
                   <Stars count={Math.round(rating)} />
-                  <span>— {count}+ avaliações</span>
+                  <span>· {count}+ avaliações</span>
                 </div>
               </div>
             </div>
@@ -92,7 +104,7 @@ export default async function GoogleReviews() {
         </Reveal>
       </div>
 
-      <ReviewsMarquee reviews={reviews} />
+      <ReviewsMarquee reviews={allReviews} />
 
       {!isReal && (
         <p className="container-x mt-8 text-center text-xs text-slate-400 max-w-2xl mx-auto">

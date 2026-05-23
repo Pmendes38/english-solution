@@ -15,7 +15,7 @@ export default function Courses() {
               Um inglês que funciona para sua realidade.
             </h2>
             <p className="mt-5 text-slate-600 text-lg">
-              Do iniciante absoluto ao executivo em reunião internacional —
+              Do iniciante absoluto ao executivo em reunião internacional,
               temos um caminho desenhado para o seu objetivo.
             </p>
           </div>
@@ -32,12 +32,12 @@ export default function Courses() {
                   href={`/cursos/${course.slug}`}
                   className="group block h-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-2xl transition-shadow"
                 >
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-56 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-brand-navy/20 to-transparent" />
                     <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">

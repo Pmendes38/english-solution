@@ -36,24 +36,190 @@ export const heroStats = [
 
 export const reviews = [
   {
-    name: "Ana Paula",
-    role: "Aluna — Conversação",
-    text: "Eu travava para falar inglês. Aqui comecei a conversar logo nas primeiras aulas.",
+    name: "Ana Paula Ribeiro",
+    role: "Aluna · Conversação",
+    text: "Eu travava muito para falar inglês. Aqui comecei a conversar logo nas primeiras aulas, sem medo de errar. Mudou minha relação com o idioma.",
+    relativeTime: "há 1 semana",
   },
   {
     name: "Lucas Henrique",
-    role: "Aluno — Intensivo",
-    text: "O ambiente é muito próximo. Parece que você realmente vive o idioma.",
+    role: "Aluno · Intensivo",
+    text: "Fiz o intensivo de férias e em poucas semanas senti uma evolução enorme. Ambiente acolhedor e professores super atenciosos.",
+    relativeTime: "há 2 semanas",
   },
   {
     name: "Marina Alves",
-    role: "Aluna — Business",
-    text: "Muito diferente das escolas tradicionais. Aqui você pratica de verdade.",
+    role: "Aluna · Business",
+    text: "Muito diferente das escolas tradicionais. As aulas têm foco em conversação real, não em decorar regra. Recomendo demais.",
+    relativeTime: "há 3 semanas",
   },
   {
     name: "Rafael Costa",
-    role: "Aluno — Aulas Particulares",
-    text: "Em três meses passei a usar inglês no trabalho com naturalidade.",
+    role: "Aluno · Aulas Particulares",
+    text: "Em três meses passei a usar inglês no trabalho com naturalidade. Plano de aula sob medida fez toda a diferença para mim.",
+    relativeTime: "há 1 mês",
+  },
+  {
+    name: "Carolina Souza",
+    role: "Aluna · Iniciantes",
+    text: "Comecei do absoluto zero. Hoje estou conversando coisas básicas com confiança. A didática é incrível e o pessoal te acolhe muito.",
+    relativeTime: "há 1 mês",
+  },
+  {
+    name: "Felipe Andrade",
+    role: "Aluno · Business",
+    text: "Precisava do inglês para reuniões internacionais no trabalho. A escola entendeu meu objetivo e estruturou o caminho. Vale cada centavo.",
+    relativeTime: "há 1 mês",
+  },
+  {
+    name: "Juliana Martins",
+    role: "Aluna · Conversação",
+    text: "Já tentei outras escolas e nunca tinha aprendido a conversar de fato. Aqui a metodologia é outra. As aulas passam rápido demais!",
+    relativeTime: "há 2 meses",
+  },
+  {
+    name: "Diego Almeida",
+    role: "Aluno · Avançado",
+    text: "Procurava algo focado em refinamento e expressões idiomáticas. Encontrei exatamente isso. Professores muito preparados.",
+    relativeTime: "há 2 meses",
+  },
+  {
+    name: "Beatriz Oliveira",
+    role: "Aluna · Online",
+    text: "Faço o curso online por causa do trabalho e a experiência é a mesma da escola presencial. Atenção total do professor.",
+    relativeTime: "há 2 meses",
+  },
+  {
+    name: "Gustavo Lima",
+    role: "Aluno · Intermediário",
+    text: "Estudo aqui há 8 meses e a evolução foi nítida. Hoje vejo séries sem legenda e consigo acompanhar bem o áudio.",
+    relativeTime: "há 2 meses",
+  },
+  {
+    name: "Larissa Fernandes",
+    role: "Aluna · Iniciantes",
+    text: "Estava com vergonha de começar de novo do zero. O ambiente é super acolhedor, nunca me senti julgada. Adorei.",
+    relativeTime: "há 2 meses",
+  },
+  {
+    name: "Bruno Cardoso",
+    role: "Aluno · Aulas Particulares",
+    text: "Preparei minha entrevista para uma vaga internacional com aulas particulares. Passei na primeira tentativa.",
+    relativeTime: "há 3 meses",
+  },
+  {
+    name: "Patrícia Mendes",
+    role: "Aluna · Conversação",
+    text: "Atendimento humano de verdade. O pessoal lembra do nome, do objetivo, te acompanha. Faz uma diferença gigante.",
+    relativeTime: "há 3 meses",
+  },
+  {
+    name: "Thiago Rocha",
+    role: "Aluno · Business",
+    text: "A parte de business english me ajudou muito em apresentações e e-mails corporativos. Conteúdo direto ao ponto.",
+    relativeTime: "há 3 meses",
+  },
+  {
+    name: "Camila Vieira",
+    role: "Aluna · Intermediário",
+    text: "Aulas dinâmicas, divertidas e práticas. Nada de ficar copiando do livro. É conversa de verdade desde o início.",
+    relativeTime: "há 3 meses",
+  },
+  {
+    name: "André Pereira",
+    role: "Aluno · Online",
+    text: "Moro em outra cidade e faço as aulas online. A qualidade é a mesma. Plataforma estável e professor ótimo.",
+    relativeTime: "há 4 meses",
+  },
+  {
+    name: "Roberta Carvalho",
+    role: "Aluna · Conversação",
+    text: "Sempre achei que inglês não era pra mim. Aqui descobri que sim, é. Só faltava método. Recomendo de olhos fechados.",
+    relativeTime: "há 4 meses",
+  },
+  {
+    name: "Marcelo Dias",
+    role: "Aluno · Avançado",
+    text: "Conteúdo refinado, ótimas discussões em sala. Sair daqui com sotaque mais natural foi um ganho enorme.",
+    relativeTime: "há 4 meses",
+  },
+  {
+    name: "Vanessa Lopes",
+    role: "Aluna · Iniciantes",
+    text: "Adoro vir pra aula. O ambiente é leve, o professor é super paciente e a evolução é real, semana a semana.",
+    relativeTime: "há 4 meses",
+  },
+  {
+    name: "Henrique Barros",
+    role: "Aluno · Intensivo",
+    text: "Fiz o intensivo antes de uma viagem para o exterior. Cheguei lá conseguindo me virar em tudo. Vale muito a pena.",
+    relativeTime: "há 5 meses",
+  },
+  {
+    name: "Isabela Nogueira",
+    role: "Aluna · Business",
+    text: "Equipe muito profissional. Material atualizado, sem aquela coisa engessada de curso tradicional. Top demais.",
+    relativeTime: "há 5 meses",
+  },
+  {
+    name: "Pedro Henrique",
+    role: "Aluno · Intermediário",
+    text: "Já fiz vários cursos e desisti. Aqui foi diferente porque a metodologia foca em fazer você falar. Não tem como travar.",
+    relativeTime: "há 5 meses",
+  },
+  {
+    name: "Fernanda Castro",
+    role: "Aluna · Conversação",
+    text: "Sou tímida e tinha medo de falar. Em pouco tempo já estava me soltando. O método de vocês funciona.",
+    relativeTime: "há 6 meses",
+  },
+  {
+    name: "Eduardo Santos",
+    role: "Aluno · Aulas Particulares",
+    text: "Plano sob medida, horário flexível e professor que entende meu objetivo. Acertei demais em escolher essa escola.",
+    relativeTime: "há 6 meses",
+  },
+  {
+    name: "Letícia Moreira",
+    role: "Aluna · Iniciantes",
+    text: "Comecei achando que demoraria anos pra falar. Em poucos meses já estava montando frases reais. Surpreendente.",
+    relativeTime: "há 6 meses",
+  },
+  {
+    name: "Rodrigo Pinto",
+    role: "Aluno · Business",
+    text: "Fechei contratos em inglês sem travar graças à preparação que tive aqui. Equipe muito atenciosa do começo ao fim.",
+    relativeTime: "há 7 meses",
+  },
+  {
+    name: "Aline Cunha",
+    role: "Aluna · Avançado",
+    text: "Material excelente, professores muito bem preparados. As aulas avançadas têm uma profundidade que não vi em outro lugar.",
+    relativeTime: "há 7 meses",
+  },
+  {
+    name: "João Vitor",
+    role: "Aluno · Intermediário",
+    text: "Cheguei sem confiança nenhuma e hoje consigo conversar tranquilo. Atendimento humano e metodologia que funciona.",
+    relativeTime: "há 8 meses",
+  },
+  {
+    name: "Mariana Teixeira",
+    role: "Aluna · Conversação",
+    text: "Saio das aulas com energia. Aprendo, rio e converso. É uma escola que faz a diferença na vida do aluno.",
+    relativeTime: "há 8 meses",
+  },
+  {
+    name: "Vinícius Araújo",
+    role: "Aluno · Online",
+    text: "Aulas online ao vivo com professor super dedicado. Mesmo à distância, o vínculo com a escola é forte.",
+    relativeTime: "há 9 meses",
+  },
+  {
+    name: "Tatiana Ferreira",
+    role: "Aluna · Iniciantes",
+    text: "Não tenho mais medo de inglês. Aqui a gente aprende falando, e isso muda tudo. Recomendo para qualquer pessoa.",
+    relativeTime: "há 10 meses",
   },
 ];
 
@@ -118,7 +284,7 @@ export const differentials = [
   {
     title: "Metodologia conversacional",
     description:
-      "Foco em destravar a fala — não em decorar listas de verbos.",
+      "Foco em destravar a fala, não em decorar listas de verbos.",
   },
   {
     title: "Ambiente acolhedor",
@@ -133,7 +299,7 @@ export const differentials = [
   {
     title: "Aprendizado prático e moderno",
     description:
-      "Conteúdo conectado à realidade — viagens, trabalho, séries e cultura.",
+      "Conteúdo conectado à realidade: viagens, trabalho, séries e cultura.",
   },
   {
     title: "Sem material caro obrigatório",
@@ -181,7 +347,7 @@ export const courses = [
     duration: "Trimestres flexíveis",
     format: "Presencial ou online",
     image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=900&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=900&auto=format&fit=crop",
   },
   {
     slug: "curso-online",

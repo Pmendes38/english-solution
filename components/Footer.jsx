@@ -88,7 +88,7 @@ export default function Footer() {
           <ul className="space-y-2 text-white/70 text-sm">
             {schedule.map((s) => (
               <li key={s.label}>
-                <span className="font-semibold text-white">{s.label}</span> —{" "}
+                <span className="font-semibold text-white">{s.label}:</span>{" "}
                 {s.value}
               </li>
             ))}

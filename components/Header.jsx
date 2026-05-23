@@ -15,7 +15,7 @@ export default function Header() {
         <Link
           href="/"
           className="flex items-center flex-shrink-0"
-          aria-label="English Solution — Home"
+          aria-label="English Solution Home"
         >
           <Image
             src="/brand/logo.svg"
