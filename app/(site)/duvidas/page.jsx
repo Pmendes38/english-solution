@@ -13,8 +13,8 @@ export default function FaqPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Dúvidas"
-        title="Perguntas frequentes."
+        eyebrow="FAQ"
+        title="Perguntas que recebemos sempre."
         description="Reunimos aqui as dúvidas mais comuns. Não achou a sua? Chama no WhatsApp."
       >
         <a

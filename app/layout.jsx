@@ -5,7 +5,7 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const tinos = Tinos({
@@ -17,20 +17,20 @@ const tinos = Tinos({
 
 export const metadata = {
   title: {
-    default: "English Solution | Você fala inglês desde o primeiro dia",
+    default: "English Solution | Inglês que transforma. Resultados que te levam mais longe.",
     template: "%s | English Solution",
   },
   description:
     "Escola de inglês em Valparaíso de Goiás. Metodologia conversacional, ambiente acolhedor e foco em destravar sua fala desde a primeira aula.",
-  metadataBase: new URL("https://englishsolution.example.com"),
+  metadataBase: new URL("https://english-solution-sigma.vercel.app"),
   icons: {
     icon: "/brand/logo.svg",
     shortcut: "/brand/logo.png",
   },
   openGraph: {
-    title: "English Solution | Você fala inglês desde o primeiro dia",
+    title: "English Solution | Inglês que transforma",
     description:
-      "Aprenda inglês conversando. Sem livros caros. Aula experimental gratuita.",
+      "Aprenda inglês conversando desde a primeira aula. Aula experimental gratuita.",
     type: "website",
     locale: "pt_BR",
     images: ["/brand/logo-bg.jpg"],
@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
       lang="pt-BR"
       className={`${montserrat.variable} ${tinos.variable}`}
     >
-      <body className="bg-white text-brand-ink font-sans overflow-x-hidden antialiased">
+      <body className="bg-[var(--bg-base)] text-[var(--text-primary)] font-sans overflow-x-hidden antialiased">
         {children}
       </body>
     </html>

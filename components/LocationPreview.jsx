@@ -1,99 +1,91 @@
+import Image from "next/image";
 import Link from "next/link";
 import { contact, schedule } from "@/data/site";
+import { ASSETS } from "@/lib/assets";
 import Reveal from "@/components/motion/Reveal";
 
 export default function LocationPreview() {
   return (
-    <section id="localizacao" className="py-24 bg-white">
-      <div className="container-x grid lg:grid-cols-2 gap-12 items-center">
+    <section id="localizacao" className="py-20 lg:py-28">
+      <div className="container-x grid lg:grid-cols-2 gap-12 items-stretch">
         <Reveal>
-          <span className="eyebrow">Onde estamos</span>
-          <h2 className="heading-display text-4xl lg:text-5xl mt-4">
-            Venha conhecer a escola.
-          </h2>
-          <p className="mt-5 text-slate-600 text-lg">
-            Estamos em Valparaíso de Goiás, com ambiente acolhedor pensado
-            para o aluno se sentir em casa desde o primeiro dia.
-          </p>
+          <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-8 lg:p-10 h-full">
+            <span className="eyebrow">VENHA CONHECER A ESCOLA</span>
+            <h2 className="heading-display mt-5 text-3xl lg:text-4xl">
+              Estamos esperando por você!
+            </h2>
 
-          <div className="mt-8 space-y-5">
-            <div>
-              <div className="text-xs uppercase tracking-widest text-brand-red font-bold">
-                Endereço
+            <div className="mt-8 space-y-5">
+              <div className="flex items-start gap-3">
+                <Image src={ASSETS.icons.local} alt="" width={28} height={28} className="mt-1" />
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Endereço</div>
+                  <div className="text-white font-semibold mt-1">{contact.addressLine}</div>
+                </div>
               </div>
-              <div className="mt-1 font-semibold text-brand-navy">
-                {contact.addressLine}
-              </div>
-            </div>
 
-            <div>
-              <div className="text-xs uppercase tracking-widest text-brand-red font-bold">
-                Horários
-              </div>
-              <ul className="mt-1 space-y-1">
-                {schedule.map((s) => (
-                  <li key={s.label} className="font-semibold text-brand-navy">
-                    {s.label}:{" "}
-                    <span className="font-normal text-slate-600">{s.value}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-xs uppercase tracking-widest text-brand-red font-bold">
-                Contato
-              </div>
-              <ul className="mt-1 space-y-1 text-slate-600">
-                <li>
+              <div className="flex items-start gap-3">
+                <Image src={ASSETS.icons.whatsapp} alt="" width={28} height={28} className="mt-1" />
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">WhatsApp</div>
                   <a
                     href={contact.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-brand-navy hover:text-brand-red"
+                    className="text-white font-semibold hover:text-[var(--accent)] mt-1 inline-block"
                   >
                     {contact.phoneDisplay}
                   </a>
-                </li>
-                <li>
-                  <a
-                    href={contact.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-brand-navy hover:text-brand-red"
-                  >
-                    {contact.instagramHandle}
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
+                </div>
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <a
-              href={contact.mapsQuery}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              Como chegar
-            </a>
-            <Link href="/localizacao" className="btn-secondary">
-              Ver página completa
-            </Link>
+              <div className="flex items-start gap-3">
+                <Image src={ASSETS.icons.calendario} alt="" width={28} height={28} className="mt-1" />
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-[var(--accent)] font-bold">Horários</div>
+                  <ul className="text-[var(--text-secondary)] text-sm mt-1 space-y-0.5">
+                    {schedule.map((s) => (
+                      <li key={s.label}>
+                        <span className="text-white">{s.label}:</span> {s.value}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3 mt-9">
+              <a
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-sm"
+              >
+                Agendar visita
+              </a>
+              <a
+                href={contact.mapsQuery}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary text-sm"
+              >
+                Como chegar
+              </a>
+            </div>
           </div>
         </Reveal>
 
-        <Reveal delay={0.15} className="relative">
-          <div className="absolute -top-5 -left-5 w-full h-full border-4 border-brand-navy rounded-[32px]" />
-          <iframe
-            src={contact.mapsEmbedSrc}
-            title="Localização da English Solution"
-            className="relative z-10 w-full h-[480px] rounded-[32px] shadow-2xl border-0"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            allowFullScreen
-          />
+        <Reveal delay={0.1}>
+          <div className="rounded-2xl overflow-hidden border border-white/10 h-full min-h-[420px]">
+            <iframe
+              src={contact.mapsEmbedSrc}
+              title="Localização da English Solution"
+              className="w-full h-full border-0"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </div>
         </Reveal>
       </div>
     </section>

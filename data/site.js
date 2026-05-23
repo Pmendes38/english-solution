@@ -225,24 +225,21 @@ export const reviews = [
 
 export const videoTestimonials = [
   {
-    name: "Depoimento 1",
+    name: "Lucas Andrade",
     role: "Em breve",
-    poster:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1200&auto=format&fit=crop",
+    poster: "/brand/photos/depoimento-1.png",
     videoSrc: "",
   },
   {
-    name: "Depoimento 2",
+    name: "Marina Costa",
     role: "Em breve",
-    poster:
-      "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop",
+    poster: "/brand/photos/depoimento-2.png",
     videoSrc: "",
   },
   {
-    name: "Depoimento 3",
+    name: "Rafael Souza",
     role: "Em breve",
-    poster:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1200&auto=format&fit=crop",
+    poster: "/brand/photos/depoimento-3.png",
     videoSrc: "",
   },
 ];
@@ -326,8 +323,9 @@ export const courses = [
     ],
     duration: "2 a 4 semanas",
     format: "Presencial em Valparaíso de Goiás",
-    image:
-      "https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/viagens.png",
+    tag: "INTENSIVO",
+    iconKey: "calendario",
   },
   {
     slug: "business-english",
@@ -346,8 +344,9 @@ export const courses = [
     ],
     duration: "Trimestres flexíveis",
     format: "Presencial ou online",
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/business.png",
+    tag: "BUSINESS",
+    iconKey: "rede",
   },
   {
     slug: "curso-online",
@@ -366,8 +365,9 @@ export const courses = [
     ],
     duration: "Mensal recorrente",
     format: "100% online ao vivo",
-    image:
-      "https://images.unsplash.com/photo-1610563166150-b34df4f3bcd6?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/online.png",
+    tag: "ONLINE",
+    iconKey: "conversas",
   },
   {
     slug: "ingles-para-empresas",
@@ -386,8 +386,9 @@ export const courses = [
     ],
     duration: "Contrato sob medida",
     format: "In company ou online",
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/empresas.png",
+    tag: "IN COMPANY",
+    iconKey: "pessoas",
   },
   {
     slug: "aulas-particulares",
@@ -406,8 +407,9 @@ export const courses = [
     ],
     duration: "Pacotes a partir de 4 aulas",
     format: "Presencial ou online",
-    image:
-      "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/particulares.png",
+    tag: "PARTICULARES",
+    iconKey: "alvo",
   },
   {
     slug: "iniciantes",
@@ -426,8 +428,9 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
-    image:
-      "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/iniciantes.png",
+    tag: "INICIANTES",
+    iconKey: "livro",
   },
   {
     slug: "intermediario",
@@ -446,8 +449,9 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
-    image:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/intermediario-avancado.png",
+    tag: "INTERMEDIÁRIO",
+    iconKey: "conversas",
   },
   {
     slug: "avancado",
@@ -466,15 +470,44 @@ export const courses = [
     ],
     duration: "Módulo de 6 meses",
     format: "Presencial",
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=900&auto=format&fit=crop",
+    image: "/brand/photos/cursos/preparatorios.png",
+    tag: "AVANÇADO",
+    iconKey: "shield",
+  },
+];
+
+export const featuredCourses = [
+  {
+    slug: "intermediario",
+    tag: "INGLÊS GERAL",
+    title: "Do básico ao avançado com foco em fluência.",
+    image: "/brand/photos/cursos/intermediario-avancado.png",
+  },
+  {
+    slug: "intensivo-de-ferias",
+    tag: "INGLÊS PARA VIAGENS",
+    title: "Viaje com confiança e aproveite cada experiência.",
+    image: "/brand/photos/cursos/viagens.png",
+    badge: "MAIS PROCURADO",
+  },
+  {
+    slug: "business-english",
+    tag: "INGLÊS PARA NEGÓCIOS",
+    title: "Comunicação eficaz para o ambiente corporativo.",
+    image: "/brand/photos/cursos/business.png",
+  },
+  {
+    slug: "avancado",
+    tag: "PREPARATÓRIOS",
+    title: "Prepare-se para exames e conquiste novas oportunidades.",
+    image: "/brand/photos/cursos/preparatorios.png",
   },
 ];
 
 export const experienceImages = [
-  "https://images.unsplash.com/photo-1529390079861-591de354faf5?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop",
+  "/brand/photos/comunidade-1.png",
+  "/brand/photos/comunidade-2.png",
+  "/brand/photos/comunidade-3.png",
 ];
 
 export const faqs = [
@@ -533,7 +566,7 @@ export const navigation = {
     { label: "Metodologia", href: "/metodologia" },
     { label: "Diferenciais", href: "/diferenciais" },
     { label: "Depoimentos", href: "/depoimentos" },
-    { label: "Localização", href: "/localizacao" },
-    { label: "Dúvidas", href: "/duvidas" },
+    { label: "Blog", href: "/blog" },
+    { label: "Contato", href: "/contato" },
   ],
 };

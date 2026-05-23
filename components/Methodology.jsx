@@ -1,54 +1,77 @@
+import Image from "next/image";
 import Link from "next/link";
-import { methodologyPillars } from "@/data/site";
+import { ASSETS } from "@/lib/assets";
 import Reveal from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 
+const pillars = [
+  {
+    icon: ASSETS.icons.conversas,
+    title: "Conversação desde a primeira aula",
+    description: "Você fala inglês desde o início do curso.",
+  },
+  {
+    icon: ASSETS.icons.rede,
+    title: "Experiências práticas e imersivas",
+    description: "Aulas dinâmicas com temas do mundo real.",
+  },
+  {
+    icon: ASSETS.icons.pessoas,
+    title: "Professores especialistas e próximos",
+    description: "Acompanhamento humanizado.",
+  },
+  {
+    icon: ASSETS.icons.livro,
+    title: "Sem dependência de livros caros",
+    description: "Todo o material incluso e atualizado.",
+  },
+  {
+    icon: ASSETS.icons.alvo,
+    title: "Aulas ao vivo em pequenos grupos",
+    description: "Mais prática, mais atenção, mais resultados.",
+  },
+];
+
 export default function Methodology() {
   return (
-    <section
-      id="metodologia"
-      className="py-24 bg-brand-navy text-white relative overflow-hidden"
-    >
-      <div className="absolute top-0 right-0 w-72 h-72 bg-brand-red rounded-full blur-3xl opacity-20" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-brand-navy-light rounded-full blur-3xl opacity-30" />
+    <section id="metodologia" className="py-20 lg:py-28">
+      <div className="container-x grid lg:grid-cols-2 gap-14 items-start">
+        <Reveal>
+          <span className="eyebrow">NOSSA METODOLOGIA</span>
+          <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
+            Inglês vivido na prática.
+          </h2>
+          <p className="mt-6 text-[var(--text-secondary)] leading-relaxed">
+            Aqui você não passa meses decorando regras antes de falar. Você
+            aprende conversando, ouvindo, interagindo e praticando desde a
+            primeira aula.
+          </p>
+          <Link
+            href="/metodologia"
+            className="inline-flex items-center gap-2 mt-8 text-[var(--accent)] font-bold hover:gap-3 transition-all"
+          >
+            Entenda como funciona
+            <span aria-hidden="true">→</span>
+          </Link>
+        </Reveal>
 
-      <div className="container-x relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <Reveal className="lg:sticky lg:top-28">
-            <span className="eyebrow text-brand-red">Metodologia</span>
-            <h2 className="font-serif font-bold text-4xl lg:text-6xl mt-4 leading-tight">
-              Inglês vivido na prática.
-            </h2>
-            <p className="mt-8 text-lg text-white/80 leading-relaxed">
-              Aqui você não passa meses decorando regras antes de falar. Você
-              aprende conversando, ouvindo, interagindo e praticando desde a
-              primeira aula.
-            </p>
-            <Link href="/metodologia" className="btn-ghost-light mt-8">
-              Conhecer a metodologia
-            </Link>
-          </Reveal>
-
-          <StaggerGroup className="grid gap-4">
-            {methodologyPillars.map((item, i) => (
-              <StaggerItem key={item.title}>
-                <div className="bg-white/5 hover:bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 transition-colors">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center font-serif font-bold text-white flex-shrink-0">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold">{item.title}</h3>
-                      <p className="mt-2 text-white/70 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
+        <StaggerGroup className="flex flex-col gap-4">
+          {pillars.map((p) => (
+            <StaggerItem key={p.title}>
+              <div className="flex items-start gap-4 bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-5 hover:bg-[var(--bg-overlay)] transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center flex-shrink-0">
+                  <Image src={p.icon} alt="" width={28} height={28} />
                 </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
+                <div>
+                  <h3 className="font-bold text-white text-lg">{p.title}</h3>
+                  <p className="text-[var(--text-secondary)] text-sm mt-1 leading-relaxed">
+                    {p.description}
+                  </p>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
       </div>
     </section>
   );

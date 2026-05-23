@@ -12,7 +12,7 @@ function Stars({ count = 5 }) {
           width="18"
           height="18"
           viewBox="0 0 20 20"
-          fill={i < count ? "#FBBC04" : "#E5E7EB"}
+          fill={i < count ? "#E31E24" : "rgba(255,255,255,0.15)"}
           aria-hidden="true"
         >
           <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
@@ -35,27 +35,12 @@ function GoogleG() {
 
 function initials(name) {
   if (!name) return "?";
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase())
-    .join("");
+  return name.split(" ").filter(Boolean).slice(0, 2).map((p) => p[0]?.toUpperCase()).join("");
 }
 
 function avatarColor(name) {
-  const colors = [
-    "bg-blue-600",
-    "bg-emerald-600",
-    "bg-rose-600",
-    "bg-amber-600",
-    "bg-violet-600",
-    "bg-sky-600",
-    "bg-pink-600",
-  ];
-  const i =
-    name?.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) %
-      colors.length || 0;
+  const colors = ["bg-blue-600", "bg-emerald-600", "bg-rose-600", "bg-amber-600", "bg-violet-600", "bg-sky-600", "bg-pink-600"];
+  const i = name?.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) % colors.length || 0;
   return colors[i];
 }
 
@@ -79,7 +64,7 @@ export default function ReviewModal({ review, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-brand-navy/70 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
           onClick={onClose}
           role="dialog"
           aria-modal="true"
@@ -90,26 +75,21 @@ export default function ReviewModal({ review, onClose }) {
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative bg-white rounded-3xl shadow-2xl max-w-xl w-full max-h-[85vh] overflow-hidden flex flex-col"
+            className="relative bg-[var(--bg-elevated)] border border-white/10 rounded-3xl shadow-2xl max-w-xl w-full max-h-[85vh] overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               type="button"
               onClick={onClose}
               aria-label="Fechar avaliação"
-              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-brand-navy flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                <path
-                  d="M4 4l8 8M12 4l-8 8"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
+                <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
               </svg>
             </button>
 
-            <div className="p-7 border-b border-slate-100 flex items-center gap-4">
+            <div className="p-7 border-b border-white/5 flex items-center gap-4">
               {review.photo ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -120,30 +100,24 @@ export default function ReviewModal({ review, onClose }) {
                 />
               ) : (
                 <div
-                  className={`w-14 h-14 rounded-full ${avatarColor(
-                    review.author
-                  )} text-white flex items-center justify-center font-bold text-lg`}
+                  className={`w-14 h-14 rounded-full ${avatarColor(review.author)} text-white flex items-center justify-center font-bold text-lg`}
                   aria-hidden="true"
                 >
                   {initials(review.author)}
                 </div>
               )}
               <div className="flex-1 min-w-0">
-                <div className="font-serif font-bold text-brand-navy text-lg">
-                  {review.author}
-                </div>
+                <div className="font-bold text-white text-lg">{review.author}</div>
                 <div className="flex items-center gap-2 mt-1">
                   <Stars count={Math.round(review.rating)} />
-                  <span className="text-sm text-slate-500">
-                    {review.relativeTime}
-                  </span>
+                  <span className="text-sm text-[var(--text-secondary)]">{review.relativeTime}</span>
                 </div>
               </div>
               <GoogleG />
             </div>
 
             <div className="p-7 overflow-y-auto">
-              <p className="text-slate-700 leading-relaxed whitespace-pre-line">
+              <p className="text-[var(--text-secondary)] leading-relaxed whitespace-pre-line">
                 {review.text}
               </p>
             </div>

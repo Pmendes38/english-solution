@@ -14,7 +14,7 @@ export default function TestimonialsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Depoimentos"
+        eyebrow="DEPOIMENTOS"
         title="Quem viveu a English Solution conta."
         description="5.0 no Google com mais de 190 avaliações reais e depoimentos em vídeo de alunos que destravaram a fala."
       >

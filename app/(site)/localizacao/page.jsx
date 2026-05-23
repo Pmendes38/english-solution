@@ -1,6 +1,8 @@
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import CTA from "@/components/CTA";
 import { contact, schedule } from "@/data/site";
+import { ASSETS } from "@/lib/assets";
 
 export const metadata = {
   title: "Localização",
@@ -8,93 +10,83 @@ export const metadata = {
     "Onde fica a English Solution em Valparaíso de Goiás. Endereço, horários e contato.",
 };
 
+const infoCards = [
+  {
+    icon: ASSETS.icons.local,
+    label: "Endereço",
+    value: contact.addressLine,
+  },
+  {
+    icon: ASSETS.icons.calendario,
+    label: "Horários",
+    value: schedule.map((s) => `${s.label}: ${s.value}`).join(" · "),
+  },
+  {
+    icon: ASSETS.icons.whatsapp,
+    label: "Contato direto",
+    value: contact.phoneDisplay,
+    href: contact.whatsapp,
+  },
+];
+
 export default function LocationPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Localização"
-        title="Venha nos visitar."
+        eyebrow="LOCALIZAÇÃO"
+        title="Venha conhecer a escola."
         description="Estamos em Valparaíso de Goiás. Ambiente acolhedor pensado para o aluno se sentir em casa."
       />
 
-      <section className="py-20 bg-white">
-        <div className="container-x grid lg:grid-cols-5 gap-10">
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <div className="text-xs uppercase tracking-widest text-brand-red font-bold">
-                Endereço
-              </div>
-              <div className="mt-2 font-serif font-bold text-2xl text-brand-navy">
-                {contact.addressLine}
-              </div>
-              <a
-                href={contact.mapsQuery}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary mt-5"
+      <section className="py-16 lg:py-20">
+        <div className="container-x">
+          <div className="grid sm:grid-cols-3 gap-4 mb-12">
+            {infoCards.map((c) => (
+              <div
+                key={c.label}
+                className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6"
               >
-                Como chegar
-              </a>
-            </div>
-
-            <div>
-              <div className="text-xs uppercase tracking-widest text-brand-red font-bold">
-                Horários de atendimento
-              </div>
-              <ul className="mt-3 space-y-2">
-                {schedule.map((s) => (
-                  <li
-                    key={s.label}
-                    className="flex justify-between border-b border-slate-100 pb-2"
-                  >
-                    <span className="font-semibold text-brand-navy">
-                      {s.label}
-                    </span>
-                    <span className="text-slate-600">{s.value}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <div className="text-xs uppercase tracking-widest text-brand-red font-bold">
-                Contato direto
-              </div>
-              <ul className="mt-3 space-y-2">
-                <li>
+                <Image src={c.icon} alt="" width={36} height={36} className="mb-4" />
+                <div className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">
+                  {c.label}
+                </div>
+                {c.href ? (
                   <a
-                    href={contact.whatsapp}
+                    href={c.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-semibold text-brand-navy hover:text-brand-red"
+                    className="block mt-2 text-white font-semibold hover:text-[var(--accent)] transition-colors"
                   >
-                    WhatsApp: {contact.phoneDisplay}
+                    {c.value}
                   </a>
-                </li>
-                <li>
-                  <a
-                    href={contact.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-semibold text-brand-navy hover:text-brand-red"
-                  >
-                    Instagram: {contact.instagramHandle}
-                  </a>
-                </li>
-              </ul>
-            </div>
+                ) : (
+                  <div className="mt-2 text-white font-semibold">{c.value}</div>
+                )}
+              </div>
+            ))}
           </div>
 
-          <div className="lg:col-span-3 relative">
-            <div className="absolute -top-5 -left-5 w-full h-full border-4 border-brand-navy rounded-[32px]" />
+          <div className="rounded-3xl overflow-hidden border border-white/10">
             <iframe
               src={contact.mapsEmbedSrc}
               title="Localização da English Solution"
-              className="relative z-10 w-full h-[560px] rounded-[32px] shadow-2xl border-0"
+              className="w-full h-[480px] border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
             />
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-5 mt-12">
+            {ASSETS.photos.comunidade.map((src, i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                key={src}
+                src={src}
+                alt={`Ambiente English Solution ${i + 1}`}
+                className="w-full h-72 object-cover rounded-2xl border border-white/5"
+              />
+            ))}
           </div>
         </div>
       </section>

@@ -17,7 +17,7 @@ function VideoCard({ item }) {
   };
 
   return (
-    <article className="group relative rounded-3xl overflow-hidden bg-brand-navy aspect-[3/4] shadow-xl">
+    <article className="group relative rounded-3xl overflow-hidden bg-[var(--bg-elevated)] aspect-[3/4] border border-white/5">
       {item.videoSrc ? (
         <video
           ref={videoRef}
@@ -28,6 +28,7 @@ function VideoCard({ item }) {
           className="absolute inset-0 w-full h-full object-cover"
         />
       ) : (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           src={item.poster}
           alt={item.name}
@@ -40,17 +41,11 @@ function VideoCard({ item }) {
           type="button"
           onClick={handlePlay}
           disabled={!item.videoSrc}
-          className="absolute inset-0 flex flex-col items-center justify-end p-6 bg-gradient-to-t from-brand-navy/90 via-brand-navy/40 to-transparent text-white"
+          className="absolute inset-0 flex flex-col items-center justify-end p-6 bg-gradient-to-t from-[var(--bg-base)]/95 via-[var(--bg-base)]/30 to-transparent text-white"
           aria-label={`Reproduzir depoimento ${item.name}`}
         >
-          <span className="w-16 h-16 rounded-full bg-white/95 text-brand-red flex items-center justify-center shadow-2xl mb-auto mt-auto group-hover:scale-110 transition-transform">
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 22 22"
-              fill="currentColor"
-              aria-hidden="true"
-            >
+          <span className="w-16 h-16 rounded-full bg-[var(--accent)] text-white flex items-center justify-center shadow-2xl mb-auto mt-auto group-hover:scale-110 transition-transform">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="currentColor" aria-hidden="true">
               <path d="M5 3l14 8-14 8V3z" />
             </svg>
           </span>
@@ -66,20 +61,20 @@ function VideoCard({ item }) {
 
 export default function VideoTestimonials() {
   return (
-    <section className="py-24 bg-brand-cream">
+    <section className="py-20 lg:py-28">
       <div className="container-x">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <span className="eyebrow">Depoimentos em vídeo</span>
-          <h2 className="heading-display text-4xl lg:text-5xl mt-4">
+          <span className="eyebrow mx-auto">DEPOIMENTOS EM VÍDEO</span>
+          <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
             Ouça quem já destravou o inglês com a gente.
           </h2>
-          <p className="mt-5 text-slate-600 text-lg">
+          <p className="mt-5 text-[var(--text-secondary)] text-lg">
             Histórias reais de alunos que começaram travados e hoje conversam
             com naturalidade.
           </p>
@@ -93,18 +88,14 @@ export default function VideoTestimonials() {
             hidden: {},
             visible: { transition: { staggerChildren: 0.12 } },
           }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
         >
           {videoTestimonials.map((item) => (
             <motion.div
               key={item.name}
               variants={{
                 hidden: { opacity: 0, y: 28 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-                },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
               }}
             >
               <VideoCard item={item} />

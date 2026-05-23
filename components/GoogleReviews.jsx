@@ -12,7 +12,7 @@ function Stars({ count = 5 }) {
           width="16"
           height="16"
           viewBox="0 0 20 20"
-          fill={i < count ? "#FBBC04" : "#E5E7EB"}
+          fill={i < count ? "#E31E24" : "rgba(255,255,255,0.15)"}
           aria-hidden="true"
         >
           <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
@@ -61,31 +61,28 @@ export default async function GoogleReviews() {
 
   const rating = isReal ? data.rating ?? 5.0 : 5.0;
   const count = isReal ? data.userRatingCount ?? 190 : 190;
-  const reviewsUrl =
-    isReal && data.mapsUri ? data.mapsUri : contact.googleReviewsUrl;
+  const reviewsUrl = isReal && data.mapsUri ? data.mapsUri : contact.googleReviewsUrl;
 
   return (
-    <section id="depoimentos" className="py-24 bg-white">
+    <section id="depoimentos" className="py-20 lg:py-28">
       <div className="container-x">
         <Reveal className="text-center mb-12 max-w-3xl mx-auto">
-          <span className="eyebrow">Avaliações do Google</span>
-          <h2 className="heading-display text-4xl lg:text-5xl mt-4">
+          <span className="eyebrow mx-auto">AVALIAÇÕES DO GOOGLE</span>
+          <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
             A escola de inglês mais bem avaliada da região.
           </h2>
-          <p className="mt-5 text-slate-600 text-lg">
+          <p className="mt-6 text-[var(--text-secondary)] text-lg">
             Avaliações reais de quem viveu a experiência da English Solution,
             diretamente do Google.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-2xl px-5 py-3 shadow-sm">
+            <div className="flex items-center gap-3 bg-[var(--bg-elevated)] border border-white/10 rounded-2xl px-5 py-3">
               <GoogleG />
               <div className="leading-tight text-left">
-                <div className="font-bold text-brand-navy">Google Reviews</div>
-                <div className="text-sm text-slate-500 flex items-center gap-2">
-                  <span className="font-semibold text-brand-navy">
-                    {rating.toFixed(1)}
-                  </span>
+                <div className="font-bold text-white">Google Reviews</div>
+                <div className="text-sm text-[var(--text-secondary)] flex items-center gap-2">
+                  <span className="font-semibold text-white">{rating.toFixed(1)}</span>
                   <Stars count={Math.round(rating)} />
                   <span>· {count}+ avaliações</span>
                 </div>
@@ -105,14 +102,6 @@ export default async function GoogleReviews() {
       </div>
 
       <ReviewsMarquee reviews={allReviews} />
-
-      {!isReal && (
-        <p className="container-x mt-8 text-center text-xs text-slate-400 max-w-2xl mx-auto">
-          Configurando integração: defina <code>GOOGLE_PLACES_API_KEY</code> e{" "}
-          <code>GOOGLE_PLACE_ID</code> em <code>.env.local</code> para exibir as
-          avaliações em tempo real.
-        </p>
-      )}
     </section>
   );
 }

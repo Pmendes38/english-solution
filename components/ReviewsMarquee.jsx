@@ -13,7 +13,7 @@ function Stars({ count = 5 }) {
           width="14"
           height="14"
           viewBox="0 0 20 20"
-          fill={i < count ? "#FBBC04" : "#E5E7EB"}
+          fill={i < count ? "#E31E24" : "rgba(255,255,255,0.15)"}
           aria-hidden="true"
         >
           <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9L10 1.5z" />
@@ -36,27 +36,12 @@ function GoogleG() {
 
 function initials(name) {
   if (!name) return "?";
-  return name
-    .split(" ")
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((p) => p[0]?.toUpperCase())
-    .join("");
+  return name.split(" ").filter(Boolean).slice(0, 2).map((p) => p[0]?.toUpperCase()).join("");
 }
 
 function avatarColor(name) {
-  const colors = [
-    "bg-blue-600",
-    "bg-emerald-600",
-    "bg-rose-600",
-    "bg-amber-600",
-    "bg-violet-600",
-    "bg-sky-600",
-    "bg-pink-600",
-  ];
-  const i =
-    name?.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) %
-      colors.length || 0;
+  const colors = ["bg-blue-600", "bg-emerald-600", "bg-rose-600", "bg-amber-600", "bg-violet-600", "bg-sky-600", "bg-pink-600"];
+  const i = name?.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0) % colors.length || 0;
   return colors[i];
 }
 
@@ -65,7 +50,7 @@ function ReviewCard({ review, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="flex-shrink-0 w-[340px] sm:w-[380px] bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:border-brand-red/30 transition-all text-left flex flex-col h-[260px] focus:outline-none focus:ring-2 focus:ring-brand-red/40"
+      className="flex-shrink-0 w-[340px] sm:w-[380px] bg-[var(--bg-elevated)] border border-white/5 hover:border-white/15 rounded-2xl p-6 transition-all text-left flex flex-col h-[260px] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40"
       aria-label={`Ler avaliação completa de ${review.author}`}
     >
       <div className="flex items-center gap-3">
@@ -79,33 +64,27 @@ function ReviewCard({ review, onClick }) {
           />
         ) : (
           <div
-            className={`w-11 h-11 rounded-full ${avatarColor(
-              review.author
-            )} text-white flex items-center justify-center font-bold flex-shrink-0`}
+            className={`w-11 h-11 rounded-full ${avatarColor(review.author)} text-white flex items-center justify-center font-bold flex-shrink-0`}
             aria-hidden="true"
           >
             {initials(review.author)}
           </div>
         )}
         <div className="flex-1 min-w-0">
-          <div className="font-semibold text-brand-navy truncate">
-            {review.author}
-          </div>
+          <div className="font-semibold text-white truncate">{review.author}</div>
           <div className="flex items-center gap-2 mt-0.5">
             <Stars count={Math.round(review.rating)} />
-            <span className="text-xs text-slate-500 truncate">
-              {review.relativeTime}
-            </span>
+            <span className="text-xs text-[var(--text-muted)] truncate">{review.relativeTime}</span>
           </div>
         </div>
         <GoogleG />
       </div>
 
-      <p className="mt-4 text-slate-700 text-sm leading-relaxed line-clamp-5 flex-1">
+      <p className="mt-4 text-[var(--text-secondary)] text-sm leading-relaxed line-clamp-5 flex-1">
         {review.text}
       </p>
 
-      <span className="mt-3 text-brand-red font-bold text-sm inline-flex items-center gap-1">
+      <span className="mt-3 text-[var(--accent)] font-bold text-sm inline-flex items-center gap-1">
         Ler avaliação completa →
       </span>
     </button>
@@ -119,11 +98,8 @@ export default function ReviewsMarquee({ reviews }) {
 
   if (!reviews?.length) return null;
 
-  // Triplicate so the loop is seamless even with few reviews
   const loop = [...reviews, ...reviews, ...reviews];
-
-  // Speed: ~25s per "set"; adjust to taste
-  const setWidth = reviews.length * 396; // approx card+gap width
+  const setWidth = reviews.length * 396;
   const duration = Math.max(20, reviews.length * 6);
 
   return (
@@ -136,18 +112,13 @@ export default function ReviewsMarquee({ reviews }) {
         onTouchStart={() => setPaused(true)}
         onTouchEnd={() => setPaused(false)}
       >
-        {/* edge fades */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-white to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-white to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[var(--bg-base)] to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[var(--bg-base)] to-transparent z-10" />
 
         <motion.div
           className="flex gap-4"
           animate={{ x: paused ? undefined : [0, -setWidth] }}
-          transition={{
-            duration,
-            ease: "linear",
-            repeat: Infinity,
-          }}
+          transition={{ duration, ease: "linear", repeat: Infinity }}
           style={{ width: "max-content" }}
         >
           {loop.map((r, i) => (

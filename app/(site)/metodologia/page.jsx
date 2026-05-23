@@ -1,7 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import PageHeader from "@/components/PageHeader";
+import Differentials from "@/components/Differentials";
 import CTA from "@/components/CTA";
-import { methodologyPillars, contact } from "@/data/site";
+import { ASSETS } from "@/lib/assets";
+import { contact } from "@/data/site";
 
 export const metadata = {
   title: "Metodologia",
@@ -9,39 +12,57 @@ export const metadata = {
     "Conheça a metodologia conversacional da English Solution: você fala desde o primeiro dia.",
 };
 
-const steps = [
+const pillars = [
   {
-    n: "01",
-    title: "Diagnóstico inicial",
-    text: "Avaliamos seu nível atual, objetivo e bagagem para desenhar o caminho ideal.",
+    icon: ASSETS.icons.conversas,
+    title: "Conversação desde a primeira aula",
+    description:
+      "Sem meses decorando regras antes de falar. Aqui você usa o inglês na prática desde a primeira aula, em situações reais e dinâmicas.",
+    image: ASSETS.photos.depoimentos[1],
   },
   {
-    n: "02",
-    title: "Imersão conversacional",
-    text: "Você começa a falar nas primeiras aulas. A confiança nasce do uso, não da teoria.",
+    icon: ASSETS.icons.rede,
+    title: "Experiências práticas e imersivas",
+    description:
+      "Aulas dinâmicas com temas do mundo real: viagens, trabalho, entretenimento e cultura. Aprendizado contextualizado de verdade.",
+    image: ASSETS.photos.comunidade[2],
   },
   {
-    n: "03",
-    title: "Material próprio aplicado",
-    text: "Conteúdo prático, sem livros caros obrigatórios, ligado à realidade do aluno.",
+    icon: ASSETS.icons.pessoas,
+    title: "Professores especialistas e próximos",
+    description:
+      "Acompanhamento humanizado. Cada aluno tem nome, ritmo e meta. Nada de turmas gigantescas onde você é mais um número.",
+    image: ASSETS.photos.depoimentos[2],
   },
   {
-    n: "04",
-    title: "Acompanhamento individual",
-    text: "Cada aluno tem ritmo, meta e acompanhamento próximo do professor.",
+    icon: ASSETS.icons.livro,
+    title: "Sem dependência de livros caros",
+    description:
+      "Material próprio incluso, atualizado e pensado para a realidade do aluno brasileiro. Você não compra nada importado.",
+    image: ASSETS.photos.estudante,
   },
   {
-    n: "05",
-    title: "Vivência além da sala",
-    text: "Eventos, conversation clubs e experiências para você viver o idioma.",
+    icon: ASSETS.icons.alvo,
+    title: "Aulas ao vivo em pequenos grupos",
+    description:
+      "Mais prática, mais atenção, mais resultados. Turmas reduzidas para garantir que todo mundo fala, escuta e evolui.",
+    image: ASSETS.photos.comunidade[0],
   },
+];
+
+const journey = [
+  { icon: ASSETS.icons.alvo, title: "Diagnóstico", description: "Avaliamos seu nível atual e objetivo." },
+  { icon: ASSETS.icons.conversas, title: "Imersão", description: "Você fala desde o primeiro dia." },
+  { icon: ASSETS.icons.livro, title: "Prática", description: "Material aplicado a situações reais." },
+  { icon: ASSETS.icons.pessoas, title: "Acompanhamento", description: "Suporte individual constante." },
+  { icon: ASSETS.icons.rede, title: "Vivência", description: "Conversation clubs e eventos." },
 ];
 
 export default function MethodologyPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Metodologia"
+        eyebrow="NOSSA METODOLOGIA"
         title="Inglês vivido na prática."
         description="Aqui você não passa meses decorando regras antes de falar. Você aprende conversando, ouvindo, interagindo e praticando desde a primeira aula."
       >
@@ -50,72 +71,78 @@ export default function MethodologyPage() {
         </Link>
       </PageHeader>
 
-      <section className="py-20 bg-white">
-        <div className="container-x">
-          <div className="max-w-3xl">
-            <span className="eyebrow">Nossos pilares</span>
-            <h2 className="heading-display text-3xl lg:text-5xl mt-4">
-              Cinco pilares que sustentam a metodologia.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid md:grid-cols-2 gap-5">
-            {methodologyPillars.map((p, i) => (
-              <div
-                key={p.title}
-                className="rounded-3xl border border-slate-200 p-7 bg-brand-cream/40"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-brand-navy text-white flex items-center justify-center font-serif font-bold flex-shrink-0">
-                    {String(i + 1).padStart(2, "0")}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-serif font-bold text-brand-navy">
-                      {p.title}
-                    </h3>
-                    <p className="mt-2 text-slate-600 leading-relaxed">
-                      {p.description}
-                    </p>
-                  </div>
-                </div>
+      <section className="py-16 lg:py-20">
+        <div className="container-x space-y-16 lg:space-y-24">
+          {pillars.map((p, i) => (
+            <div
+              key={p.title}
+              className={`grid lg:grid-cols-2 gap-10 items-center ${
+                i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
+              }`}
+            >
+              <div className="relative rounded-3xl overflow-hidden border border-white/5 aspect-[5/4]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-            ))}
-          </div>
+              <div>
+                <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center mb-5">
+                  <Image src={p.icon} alt="" width={32} height={32} />
+                </div>
+                <h2 className="heading-display text-3xl lg:text-4xl">{p.title}</h2>
+                <p className="mt-5 text-[var(--text-secondary)] leading-relaxed">
+                  {p.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20 bg-brand-cream">
+      <section className="py-16 lg:py-20">
         <div className="container-x">
           <div className="max-w-3xl mb-12">
-            <span className="eyebrow">Sua jornada</span>
-            <h2 className="heading-display text-3xl lg:text-5xl mt-4">
+            <span className="eyebrow">JORNADA DO ALUNO</span>
+            <h2 className="heading-display mt-5 text-3xl lg:text-5xl">
               Como funciona, do diagnóstico ao domínio.
             </h2>
           </div>
 
-          <ol className="space-y-4">
-            {steps.map((s) => (
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {journey.map((s, i) => (
               <li
-                key={s.n}
-                className="bg-white rounded-2xl border border-slate-200 p-6 flex items-start gap-5"
+                key={s.title}
+                className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6 relative"
               >
-                <span className="font-serif font-bold text-brand-red text-3xl">
-                  {s.n}
-                </span>
-                <div>
-                  <h3 className="font-bold text-brand-navy text-lg">
-                    {s.title}
-                  </h3>
-                  <p className="text-slate-600 mt-1 leading-relaxed">
-                    {s.text}
-                  </p>
+                <div className="absolute top-4 right-4 text-[var(--accent)]/30 font-serif font-bold text-3xl">
+                  {String(i + 1).padStart(2, "0")}
                 </div>
+                <Image src={s.icon} alt="" width={36} height={36} className="mb-4" />
+                <h3 className="font-bold text-white">{s.title}</h3>
+                <p className="text-[var(--text-secondary)] text-sm mt-2 leading-relaxed">
+                  {s.description}
+                </p>
               </li>
             ))}
           </ol>
+
+          <div className="mt-12 text-center">
+            <a
+              href={contact.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              Quero experimentar essa metodologia
+            </a>
+          </div>
         </div>
       </section>
 
+      <Differentials />
       <CTA />
     </>
   );

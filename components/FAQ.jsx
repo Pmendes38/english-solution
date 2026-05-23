@@ -10,18 +10,18 @@ export default function FAQ({ items, showAllLink = true }) {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="faq" className="py-20 lg:py-28">
       <div className="container-x max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="eyebrow">FAQ</span>
-          <h2 className="heading-display text-4xl lg:text-5xl mt-4">
-            Dúvidas frequentes
+          <span className="eyebrow mx-auto">DÚVIDAS FREQUENTES</span>
+          <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
+            Perguntas que recebemos sempre.
           </h2>
         </motion.div>
 
@@ -33,7 +33,7 @@ export default function FAQ({ items, showAllLink = true }) {
             hidden: {},
             visible: { transition: { staggerChildren: 0.06 } },
           }}
-          className="space-y-4"
+          className="space-y-3"
         >
           {list.map((item, index) => {
             const isOpen = openIndex === index;
@@ -42,13 +42,9 @@ export default function FAQ({ items, showAllLink = true }) {
                 key={item.question}
                 variants={{
                   hidden: { opacity: 0, y: 16 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
-                  },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.45 } },
                 }}
-                className="border border-slate-200 rounded-2xl bg-brand-cream/40 overflow-hidden"
+                className="bg-[var(--bg-elevated)] border border-white/5 rounded-xl overflow-hidden hover:border-white/15 transition-colors"
               >
                 <button
                   type="button"
@@ -56,12 +52,12 @@ export default function FAQ({ items, showAllLink = true }) {
                   aria-expanded={isOpen}
                   className="w-full text-left p-6 flex items-start justify-between gap-4"
                 >
-                  <h3 className="font-serif font-bold text-lg lg:text-xl text-brand-navy">
+                  <h3 className="font-bold text-white text-base lg:text-lg">
                     {item.question}
                   </h3>
                   <span
                     aria-hidden="true"
-                    className={`text-brand-red text-2xl font-bold transition-transform flex-shrink-0 ${
+                    className={`text-[var(--accent)] text-2xl font-bold transition-transform flex-shrink-0 leading-none ${
                       isOpen ? "rotate-45" : ""
                     }`}
                   >
@@ -78,7 +74,7 @@ export default function FAQ({ items, showAllLink = true }) {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                      <div className="px-6 pb-6 text-[var(--text-secondary)] leading-relaxed">
                         {item.answer}
                       </div>
                     </motion.div>
@@ -92,7 +88,7 @@ export default function FAQ({ items, showAllLink = true }) {
         {showAllLink && (
           <div className="mt-10 text-center">
             <Link href="/duvidas" className="btn-secondary">
-              Ver todas as dúvidas
+              Ver todas as perguntas →
             </Link>
           </div>
         )}
