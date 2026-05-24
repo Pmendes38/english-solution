@@ -26,11 +26,11 @@ export default function Differentials() {
               <StaggerItem key={item.label}>
                 <div className="flex flex-col items-center text-center px-2">
                   <Image
-                    src={ASSETS.icons[item.icon]}
+                    src={ASSETS.iconsWhite[item.icon] || ASSETS.icons[item.icon]}
                     alt=""
                     width={72}
                     height={72}
-                    className="h-16 w-16 lg:h-[68px] lg:w-[68px] mb-4"
+                    className="h-16 w-auto lg:h-[68px] mb-4"
                   />
                   <div className="text-sm text-white leading-snug max-w-[180px]">
                     {item.label}

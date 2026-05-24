@@ -17,7 +17,7 @@ export default function LocationPreview() {
 
             <div className="mt-7 space-y-4">
               <div className="flex items-start gap-3">
-                <Image src={ASSETS.icons.local} alt="" width={24} height={24} className="mt-1 flex-shrink-0" />
+                <Image src={ASSETS.iconsWhite.local} alt="" width={24} height={24} className="mt-1 flex-shrink-0" />
                 <div className="text-[var(--text-secondary)] text-sm leading-relaxed">
                   Ed. Bulgainville centro - Etapa A,<br />
                   Quadra 06, Lote 2, Sala 202 -<br />
@@ -39,7 +39,7 @@ export default function LocationPreview() {
               </div>
 
               <div className="flex items-center gap-3">
-                <Image src={ASSETS.icons.whatsapp} alt="" width={24} height={24} className="flex-shrink-0" />
+                <Image src={ASSETS.iconsWhite.whatsapp} alt="" width={24} height={24} className="flex-shrink-0" />
                 <a
                   href={contact.whatsapp}
                   target="_blank"

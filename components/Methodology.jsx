@@ -6,7 +6,7 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 
 const pillars = [
   {
-    icon: ASSETS.icons.conversas,
+    icon: ASSETS.iconsWhite.conversas,
     title: "Conversação desde a primeira aula",
     description: "Sem meses decorando regras. Você fala, ouve, interage e ganha confiança desde o início.",
   },
@@ -16,7 +16,7 @@ const pillars = [
     description: "Atividades em grupo, simulações reais e situações do dia a dia para vivenciar o idioma.",
   },
   {
-    icon: ASSETS.icons.pessoas,
+    icon: ASSETS.iconsWhite.pessoas,
     title: "Aulas dinâmicas e humanas",
     description: "Professores próximos, turmas reduzidas e ambiente acolhedor para você se sentir à vontade.",
   },
@@ -26,7 +26,7 @@ const pillars = [
     description: "Material próprio, atualizado e prático. Você não precisa comprar livros importados todo semestre.",
   },
   {
-    icon: ASSETS.icons.alvo,
+    icon: ASSETS.iconsWhite.alvo,
     title: "Foco em confiança para falar",
     description: "Mais do que gramática: trabalhamos a perda do medo de errar e a fluência real de comunicação.",
   },
