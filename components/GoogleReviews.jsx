@@ -14,7 +14,7 @@ function Stars({ count = 5, size = 14 }) {
           width={size}
           height={size}
           viewBox="0 0 20 20"
-          fill={i < count ? "#E31E24" : "rgba(255,255,255,0.15)"}
+          fill={i < count ? "#F8A702" : "rgba(255,255,255,0.15)"}
           aria-hidden="true"
         >
           <path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9L10 1.5z" />

@@ -43,9 +43,11 @@ function VideoCard({ item }) {
           className="absolute inset-0 flex flex-col items-center justify-end p-5 bg-gradient-to-t from-[var(--bg-base)]/95 via-[var(--bg-base)]/40 to-transparent text-white"
           aria-label={`Reproduzir depoimento ${item.name}`}
         >
-          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-[var(--accent)] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-            <svg width="20" height="20" viewBox="0 0 22 22" fill="currentColor" aria-hidden="true">
-              <path d="M5 3l14 8-14 8V3z" />
+          <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform">
+            <svg width="56" height="56" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+              <path d="M17 27.2857V14.7143L28.4286 20.3732L17 27.2857Z" fill="white" />
+              <path d="M41 21C41 32.0457 32.0457 41 21 41C9.95431 41 1 32.0457 1 21C1 9.95431 9.95431 1 21 1C32.0457 1 41 9.95431 41 21Z" stroke="white" strokeWidth="2" />
+              <path d="M17 27.2857V14.7143L28.4286 20.3732L17 27.2857Z" stroke="white" strokeWidth="2" />
             </svg>
           </span>
           <div className="text-left w-full">
