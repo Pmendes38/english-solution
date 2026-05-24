@@ -12,7 +12,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-[var(--bg-base)]/80 backdrop-blur-md border-b border-white/5">
-      <div className="container-x flex items-center justify-between h-[72px] gap-6">
+      <div className="container-x flex items-center justify-between h-[88px] lg:h-[100px] gap-6">
         <Link href="/" className="flex items-center flex-shrink-0" aria-label="English Solution">
           <Image
             src={ASSETS.logo}
@@ -20,7 +20,7 @@ export default function Header() {
             width={150}
             height={56}
             priority
-            className="h-12 w-auto"
+            className="h-14 lg:h-16 w-auto"
           />
         </Link>
 

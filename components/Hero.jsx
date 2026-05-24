@@ -23,7 +23,7 @@ export default function Hero() {
       <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />
 
-      <div className="container-x relative z-10 pt-12 lg:pt-20 pb-10 lg:pb-14 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
+      <div className="container-x relative z-10 pt-14 lg:pt-24 pb-14 lg:pb-20 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-16 items-center">
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.span variants={fadeUp} transition={{ duration: 0.5 }} className="eyebrow">
             INGLÊS QUE TRANSFORMA
