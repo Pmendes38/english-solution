@@ -74,17 +74,29 @@ export default function LocationPreview() {
 
         <Reveal delay={0.1}>
           <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl overflow-hidden h-full min-h-[420px] relative">
-            <div className="absolute top-5 left-5 right-5 z-10 bg-white rounded-xl p-4 shadow-2xl">
+            <div
+              className="absolute inset-0 opacity-40"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(120,160,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(120,160,255,0.08) 1px, transparent 1px)",
+                backgroundSize: "32px 32px",
+              }}
+              aria-hidden="true"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-br from-[var(--bg-elevated)]/40 to-[var(--brand-blue)]/30"
+              aria-hidden="true"
+            />
+
+            <div className="absolute top-5 left-5 right-5 z-10 bg-white rounded-xl p-4 shadow-2xl max-w-sm">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="font-bold text-[var(--brand-gray-dark)] text-sm leading-tight">
                     English Solution Valparaíso
                   </div>
                   <p className="text-[var(--brand-gray-dark)]/60 text-xs mt-1 leading-snug">
-                    Ed. Bulgainville centro - Etapa A,
-                    Quadra 06, Lote 2, Sala 202 -
-                    Valparaizo I, Valparaíso de Goiás -
-                    GO, 72876-640, Brasil
+                    Ed. Bulgainville centro - Etapa A, Quadra 06, Lote 2, Sala 202 -
+                    Valparaizo I, Valparaíso de Goiás - GO, 72876-640, Brasil
                   </p>
                   <div className="flex items-center gap-1 mt-2">
                     <span className="text-[var(--brand-gray-dark)] font-bold text-xs">5.0</span>
@@ -110,14 +122,13 @@ export default function LocationPreview() {
               </div>
             </div>
 
-            <iframe
-              src={contact.mapsEmbedSrc}
-              title="Localização da English Solution"
-              className="w-full h-full border-0 grayscale-[20%]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <div className="w-10 h-10 rounded-full bg-[var(--accent)] flex items-center justify-center shadow-2xl ring-4 ring-white/20">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                </svg>
+              </div>
+            </div>
           </div>
         </Reveal>
       </div>

@@ -519,10 +519,11 @@ export const methodologyPillarIcons = {
 };
 
 export const differentialsHome = [
-  { icon: "pessoas", label: "Turmas reduzidas e personalizadas" },
-  { icon: "ambiente", label: "Ambiente moderno e acolhedor" },
-  { icon: "resultados", label: "Resultados rápidos e comprovados" },
-  { icon: "atendimento", label: "Atendimento próximo e humanizado" },
+  { icon: "pessoas", label: "Professores nativos e certificados" },
+  { icon: "conversas", label: "Turmas reduzidas e personalizadas" },
+  { icon: "local", label: "Ambiente moderno e acolhedor" },
+  { icon: "alvo", label: "Resultados rápidos e comprovados" },
+  { icon: "shield", label: "Atendimento próximo e humanizado" },
 ];
 
 export const communityBenefits = [

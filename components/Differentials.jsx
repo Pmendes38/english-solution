@@ -21,18 +21,18 @@ export default function Differentials() {
             className="hidden lg:block w-px h-32 bg-white/15"
           />
 
-          <StaggerGroup className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+          <StaggerGroup className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4">
             {differentialsHome.map((item) => (
               <StaggerItem key={item.label}>
-                <div className="flex flex-col items-center text-center px-2">
+                <div className="flex flex-col items-center text-center">
                   <Image
                     src={ASSETS.iconsWhite[item.icon] || ASSETS.icons[item.icon]}
                     alt=""
-                    width={72}
-                    height={72}
-                    className="h-16 w-auto lg:h-[68px] mb-4"
+                    width={56}
+                    height={56}
+                    className="h-14 w-14 mb-3"
                   />
-                  <div className="text-sm text-white leading-snug max-w-[180px]">
+                  <div className="text-xs text-white leading-tight max-w-[140px]">
                     {item.label}
                   </div>
                 </div>
