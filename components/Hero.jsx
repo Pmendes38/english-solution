@@ -19,11 +19,11 @@ const container = {
 export default function Hero() {
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute -top-32 -left-32 w-[420px] h-[420px] bg-[var(--brand-blue)] rounded-full blur-[140px] opacity-50 pointer-events-none" />
-      <div className="absolute -bottom-20 right-1/4 w-[420px] h-[420px] bg-[var(--accent)] rounded-full blur-[160px] opacity-15 pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-[480px] h-[480px] bg-[var(--brand-blue)] rounded-full blur-[160px] opacity-50 pointer-events-none" />
+      <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />
 
-      <div className="container-x relative z-10 pt-10 lg:pt-16 pb-12 lg:pb-16 grid lg:grid-cols-[1.05fr_1fr] gap-10 items-center">
+      <div className="container-x relative z-10 pt-12 lg:pt-20 pb-10 lg:pb-14 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.span variants={fadeUp} transition={{ duration: 0.5 }} className="eyebrow">
             INGLÊS QUE TRANSFORMA
@@ -32,7 +32,7 @@ export default function Hero() {
           <motion.h1
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="heading-display mt-5 text-[clamp(2.5rem,5vw,4rem)]"
+            className="heading-display mt-6 text-[clamp(2.5rem,5.5vw,5.5rem)]"
           >
             Você fala inglês
             <br />
@@ -44,7 +44,7 @@ export default function Hero() {
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed max-w-xl"
+            className="mt-8 text-lg lg:text-xl text-[var(--text-secondary)] leading-relaxed max-w-2xl"
           >
             Na English Solution, você aprende inglês de verdade:
             com fluência, confiança e resultados que se refletem
@@ -54,20 +54,19 @@ export default function Hero() {
           <motion.div
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 mt-8"
+            className="flex flex-col sm:flex-row gap-4 mt-10"
           >
             <a
               href={contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary text-base px-8 py-5"
             >
               Agendar Aula Experimental
+              <span aria-hidden="true">→</span>
             </a>
-            <Link href="/metodologia" className="btn-secondary">
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
-                <path d="M3 2l9 5-9 5V2z" />
-              </svg>
+            <Link href="/metodologia" className="btn-secondary text-base px-8 py-5">
+              <Image src={ASSETS.icons.play} alt="" width={22} height={22} />
               Como Funciona
             </Link>
           </motion.div>

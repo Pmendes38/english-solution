@@ -11,7 +11,7 @@ export default function FAQ({ items, showAllLink = true, max = 3 }) {
 
   return (
     <section id="faq" className="py-16 lg:py-20">
-      <div className="container-x max-w-3xl">
+      <div className="container-x" style={{ maxWidth: "1620px" }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,14 +50,14 @@ export default function FAQ({ items, showAllLink = true, max = 3 }) {
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? -1 : index)}
                   aria-expanded={isOpen}
-                  className="w-full text-left px-5 py-4 flex items-center justify-between gap-4"
+                  className="w-full text-left px-8 lg:px-12 py-6 lg:py-7 flex items-center justify-between gap-4"
                 >
-                  <h3 className="text-white text-sm lg:text-base">
+                  <h3 className="text-white text-base lg:text-lg">
                     {item.question}
                   </h3>
                   <span
                     aria-hidden="true"
-                    className={`text-[var(--accent)] text-xl font-bold transition-transform flex-shrink-0 leading-none ${
+                    className={`text-white text-2xl font-bold transition-transform flex-shrink-0 leading-none ${
                       isOpen ? "rotate-45" : ""
                     }`}
                   >
@@ -74,7 +74,7 @@ export default function FAQ({ items, showAllLink = true, max = 3 }) {
                       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed">
+                      <div className="px-8 lg:px-12 pb-6 lg:pb-7 text-[var(--text-secondary)] text-sm lg:text-base leading-relaxed">
                         {item.answer}
                       </div>
                     </motion.div>

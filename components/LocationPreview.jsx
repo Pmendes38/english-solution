@@ -7,7 +7,7 @@ import Reveal from "@/components/motion/Reveal";
 export default function LocationPreview() {
   return (
     <section id="localizacao" className="py-16 lg:py-20">
-      <div className="container-x grid lg:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
+      <div className="container-x grid lg:grid-cols-[696fr_1091fr] gap-6 lg:gap-8 items-stretch">
         <Reveal>
           <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-7 lg:p-8 h-full">
             <span className="eyebrow">VENHA CONHECER A ESCOLA</span>
