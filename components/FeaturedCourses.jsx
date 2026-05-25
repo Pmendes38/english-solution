@@ -26,7 +26,7 @@ export default function FeaturedCourses() {
               <StaggerItem key={c.slug}>
                 <Link
                   href={`/cursos/${c.slug}`}
-                  className="group block relative aspect-[4/5] rounded-xl overflow-hidden border-2 border-white/40 hover:border-white/60 transition-all"
+                  className="group block relative aspect-[4/5] rounded-xl overflow-hidden transition-all"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
