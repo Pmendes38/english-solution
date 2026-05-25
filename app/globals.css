@@ -40,7 +40,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-base);
-  background-image: radial-gradient(ellipse 120% 35% at 50% 0%, rgba(0, 45, 96, 0.38) 0%, transparent 60%);
+  background-image:
+    radial-gradient(ellipse 120% 28% at 50%  0%,  rgba(0, 45, 96, 0.42) 0%, transparent 55%),
+    radial-gradient(ellipse  70% 20% at  8% 22%,  rgba(0, 35, 80, 0.28) 0%, transparent 50%),
+    radial-gradient(ellipse  70% 20% at 92% 48%,  rgba(0, 35, 80, 0.24) 0%, transparent 50%),
+    radial-gradient(ellipse  70% 20% at 12% 72%,  rgba(0, 35, 80, 0.22) 0%, transparent 50%),
+    radial-gradient(ellipse  70% 20% at 88% 92%,  rgba(0, 35, 80, 0.20) 0%, transparent 50%);
   color: var(--text-primary);
 }
 

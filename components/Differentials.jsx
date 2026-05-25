@@ -6,7 +6,7 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 
 export default function Differentials() {
   return (
-    <section id="diferenciais" className="py-12 lg:py-16" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, #001940 0%, #000c1f 100%)" }}>
+    <section id="diferenciais" className="py-12 lg:py-16">
       <div className="container-x">
         <div className="glass-panel rounded-[20px] px-8 lg:px-14 py-10 lg:py-14 grid lg:grid-cols-[1fr_auto_2fr] gap-8 lg:gap-12 items-center">
           <Reveal>

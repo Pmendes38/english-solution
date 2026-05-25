@@ -62,7 +62,7 @@ export default function FeaturedCourses() {
   const containerRef = useRef(null);
 
   return (
-    <section id="cursos" className="py-16 lg:py-20" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, #001940 0%, #000c1f 100%)" }}>
+    <section id="cursos" className="py-16 lg:py-20">
       <div className="container-x">
         <div className="glass-panel rounded-2xl p-7 lg:p-12">
           <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">

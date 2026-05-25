@@ -10,7 +10,7 @@ export default function LocationPreview() {
     : null;
 
   return (
-    <section id="localizacao" className="py-16 lg:py-20" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, #001940 0%, #000c1f 100%)" }}>
+    <section id="localizacao" className="py-16 lg:py-20">
       <div className="container-x grid lg:grid-cols-[696fr_1091fr] gap-6 lg:gap-8 items-stretch">
         <Reveal>
           <div className="glass-panel rounded-2xl p-7 lg:p-8 h-full">
