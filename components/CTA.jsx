@@ -5,10 +5,11 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function CTA() {
   return (
-    <section id="agendar" className="py-12 lg:py-20">
-      <div className="container-x">
+    <section id="agendar" className="pb-12 lg:pb-20 pt-12 lg:pt-28 xl:pt-44">
+      <div className="container-x relative">
         <Reveal>
-          <div className="relative rounded-3xl border border-white/5 overflow-visible lg:overflow-hidden">
+          {/* Card com overflow-visible para a imagem sair por cima */}
+          <div className="relative rounded-3xl border border-white/5 overflow-visible">
             <div className="relative overflow-hidden rounded-3xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -18,7 +19,7 @@ export default function CTA() {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              <div className="relative grid lg:grid-cols-[1.4fr_1fr] gap-6 items-center px-8 lg:px-16 py-12 lg:py-16 min-h-[280px] lg:min-h-[360px]">
+              <div className="relative grid lg:grid-cols-[1.4fr_1fr] gap-6 items-center px-8 lg:px-16 py-12 lg:py-16 min-h-[280px] lg:min-h-[380px]">
                 <div className="z-10">
                   <span className="inline-flex items-center gap-3 uppercase tracking-[0.16em] text-[12px] font-semibold text-white before:content-[''] before:inline-block before:w-[3px] before:h-3 before:bg-[var(--accent)] before:rounded-sm">
                     SUA NOVA HISTÓRIA COMEÇA AGORA
@@ -55,14 +56,14 @@ export default function CTA() {
               </div>
             </div>
 
-            {/* HOMEM CTA ultrapassa a faixa, posicionado absolutamente */}
-            <div className="hidden lg:block absolute right-0 bottom-0 z-30 pointer-events-none w-[500px] xl:w-[660px]">
+            {/* Pessoa colada à direita e à base do card, sobe acima do card sem clip */}
+            <div className="hidden lg:block absolute right-0 bottom-0 z-30 pointer-events-none w-[440px] xl:w-[540px]">
               <Image
                 src={ASSETS.photos.ctaFinalAluno}
                 alt="Aluno English Solution"
                 width={810}
                 height={836}
-                className="w-full h-auto -mt-20 xl:-mt-32"
+                className="w-full h-auto"
                 priority={false}
               />
             </div>
