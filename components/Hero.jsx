@@ -23,8 +23,8 @@ export default function Hero() {
       <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />
 
-      <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-16 items-center">
-        <motion.div initial="hidden" animate="visible" variants={container}>
+      <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_1.2fr] gap-4 lg:gap-6 items-center">
+        <motion.div initial="hidden" animate="visible" variants={container} className="lg:pr-8">
           <motion.span variants={fadeUp} transition={{ duration: 0.5 }} className="eyebrow">
             INGLÊS QUE TRANSFORMA
           </motion.span>
@@ -34,9 +34,11 @@ export default function Hero() {
             transition={{ duration: 0.6 }}
             className="heading-display mt-6 text-[clamp(2.5rem,5.5vw,5.5rem)]"
           >
-            Você fala inglês desde o primeiro dia.
+            Você fala inglês
             <br />
-            <span className="text-[var(--accent)]">Seja Imersivo.</span>
+            desde o primeiro dia.
+            <br />
+            <span className="text-[var(--accent)]">Seja Imersivo</span>
           </motion.h1>
 
           <motion.p
@@ -74,7 +76,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative"
+          className="relative -mr-6 sm:-mr-8 lg:-mr-12 xl:-mr-20"
         >
           <Image
             src={ASSETS.photos.heroHome}
