@@ -5,7 +5,7 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function CTA() {
   return (
-    <section id="agendar" className="pb-12 lg:pb-20 pt-12 lg:pt-28 xl:pt-44">
+    <section id="agendar" className="pb-12 lg:pb-20 pt-12 lg:pt-[240px] xl:pt-[360px]">
       <div className="container-x relative">
         <Reveal>
           {/* Card com overflow-visible para a imagem sair por cima */}
@@ -57,7 +57,7 @@ export default function CTA() {
             </div>
 
             {/* Pessoa colada à direita e à base do card, sobe acima do card sem clip */}
-            <div className="hidden lg:block absolute right-0 bottom-0 z-30 pointer-events-none w-[440px] xl:w-[540px]">
+            <div className="hidden lg:block absolute right-0 bottom-0 z-30 pointer-events-none w-[700px] xl:w-[820px]">
               <Image
                 src={ASSETS.photos.ctaFinalAluno}
                 alt="Aluno English Solution"
