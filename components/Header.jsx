@@ -17,10 +17,10 @@ export default function Header() {
           <Image
             src={ASSETS.logo}
             alt="English Solution"
-            width={150}
-            height={56}
+            width={400}
+            height={113}
             priority
-            className="h-14 lg:h-16 w-auto"
+            className="h-10 lg:h-12 w-auto"
           />
         </Link>
 

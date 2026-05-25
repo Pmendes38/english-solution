@@ -19,9 +19,9 @@ export default function Footer() {
           <Image
             src={ASSETS.logo}
             alt="English Solution"
-            width={170}
-            height={70}
-            className="h-14 w-auto mb-5"
+            width={400}
+            height={113}
+            className="h-10 w-auto mb-5"
           />
           <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-xs">
             Inglês que transforma. Resultados que te levam mais longe.
