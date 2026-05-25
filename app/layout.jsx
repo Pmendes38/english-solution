@@ -23,10 +23,6 @@ export const metadata = {
   description:
     "Escola de inglês em Valparaíso de Goiás. Metodologia conversacional, ambiente acolhedor e foco em destravar sua fala desde a primeira aula.",
   metadataBase: new URL("https://english-solution-sigma.vercel.app"),
-  icons: {
-    icon: "/brand/logo.svg",
-    shortcut: "/brand/logo.png",
-  },
   openGraph: {
     title: "English Solution | Inglês que transforma",
     description:
