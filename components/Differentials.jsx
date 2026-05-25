@@ -8,7 +8,7 @@ export default function Differentials() {
   return (
     <section id="diferenciais" className="py-12 lg:py-16">
       <div className="container-x">
-        <div className="grid lg:grid-cols-[1fr_auto_2fr] gap-8 lg:gap-12 items-center">
+        <div className="backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-[20px] px-8 lg:px-14 py-10 lg:py-14 grid lg:grid-cols-[1fr_auto_2fr] gap-8 lg:gap-12 items-center">
           <Reveal>
             <span className="eyebrow">POR QUE SOMOS REFERÊNCIA NA REGIÃO?</span>
             <h2 className="heading-display mt-4 text-3xl lg:text-[34px] leading-tight">

@@ -69,7 +69,7 @@ export default function VideoTestimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start"
+          className="backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row gap-10 lg:gap-12 items-start"
         >
           {/* Left col */}
           <div className="lg:w-1/3 flex-shrink-0">
