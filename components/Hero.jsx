@@ -23,6 +23,8 @@ export default function Hero() {
       <div className="absolute -top-40 -left-40 w-[680px] h-[680px] bg-[var(--brand-blue)] rounded-full blur-[180px] opacity-55 pointer-events-none" />
       {/* Ambient indigo — mid left, for color richness */}
       <div className="absolute top-1/3 -left-10 w-[360px] h-[360px] bg-indigo-900 rounded-full blur-[130px] opacity-35 pointer-events-none" />
+      {/* Red glow — behind the woman on the right */}
+      <div className="absolute top-[10%] right-[5%] w-[520px] h-[520px] bg-[var(--accent)] rounded-full blur-[120px] opacity-25 pointer-events-none" />
       {/* Grid texture */}
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-[0.22] pointer-events-none" />
       {/* Bottom fade — seamless transition to next section */}
@@ -83,8 +85,6 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative -mr-6 sm:-mr-8 lg:-mr-12 xl:-mr-20"
         >
-          {/* Red glow behind the woman */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-[75%] h-[75%] bg-[var(--accent)] rounded-full blur-[90px] opacity-30 pointer-events-none" />
           <Image
             src={ASSETS.photos.heroHome}
             alt="Aluna da English Solution com símbolos do Reino Unido e EUA"
