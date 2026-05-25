@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { reviews as fallbackReviews, contact } from "@/data/site";
+import { contact } from "@/data/site";
 import { fetchGoogleReviews } from "@/lib/google-reviews";
 import { ASSETS } from "@/lib/assets";
 import Reveal from "@/components/motion/Reveal";
@@ -24,31 +24,13 @@ function Stars({ count = 5, size = 14 }) {
   );
 }
 
-function shuffleSeeded(arr, seed = 7) {
-  const a = [...arr];
-  let s = seed;
-  for (let i = a.length - 1; i > 0; i--) {
-    s = (s * 9301 + 49297) % 233280;
-    const j = Math.floor((s / 233280) * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 export default async function GoogleReviews() {
   const data = await fetchGoogleReviews();
-  const isReal = !!data;
+  const isReal = !!data && Array.isArray(data.reviews) && data.reviews.length > 0;
 
-  const curated = fallbackReviews.map((r) => ({
-    author: r.name,
-    photo: null,
-    rating: 5,
-    text: r.text,
-    relativeTime: r.relativeTime ?? r.role,
-  }));
-
-  const realReviews = isReal ? data.reviews : [];
-  const allReviews = shuffleSeeded([...realReviews, ...curated]);
+  // Apenas reviews REAIS do Google. Se a API falhar, marquee fica vazio
+  // (a seção continua exibindo as pills com rating).
+  const allReviews = isReal ? data.reviews : [];
 
   const rating = isReal ? data.rating ?? 5.0 : 5.0;
   const count = isReal ? data.userRatingCount ?? 200 : 200;
