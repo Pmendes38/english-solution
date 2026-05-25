@@ -13,7 +13,7 @@ export default function LocationPreview() {
     <section id="localizacao" className="py-16 lg:py-20">
       <div className="container-x grid lg:grid-cols-[696fr_1091fr] gap-6 lg:gap-8 items-stretch">
         <Reveal>
-          <div className="backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-2xl p-7 lg:p-8 h-full">
+          <div className="glass-panel rounded-2xl p-7 lg:p-8 h-full">
             <span className="eyebrow">VENHA CONHECER A ESCOLA</span>
             <h2 className="heading-display mt-4 text-3xl lg:text-4xl">
               Estamos esperando<br /> por você!

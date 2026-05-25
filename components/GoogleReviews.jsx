@@ -55,7 +55,10 @@ export default async function GoogleReviews() {
   const reviewsUrl = isReal && data.mapsUri ? data.mapsUri : contact.googleReviewsUrl;
 
   return (
-    <section id="depoimentos" className="py-16 lg:py-20">
+    <section id="depoimentos" className="py-16 lg:py-20 relative overflow-hidden">
+      {/* Ambient glow centered behind header */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[var(--brand-blue)] rounded-full blur-[140px] opacity-[0.15] pointer-events-none" />
+      <div className="absolute top-8 right-8 w-[280px] h-[280px] bg-[var(--accent)] rounded-full blur-[120px] opacity-[0.07] pointer-events-none" />
       <div className="container-x">
         <Reveal>
           <div className="relative text-center max-w-3xl mx-auto mb-10">
@@ -84,7 +87,7 @@ export default async function GoogleReviews() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
-            <div className="flex items-center gap-3 bg-[var(--bg-elevated)] border border-white/10 rounded-2xl px-6 py-4 min-h-[80px]">
+            <div className="flex items-center gap-3 border border-white/[0.12] rounded-2xl px-6 py-4 min-h-[80px]" style={{background:"linear-gradient(to bottom,#001f56,#000e25)"}}>
               <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true">
                 <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.5 6.1 29.5 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.3-.4-3.5z" />
                 <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 12 24 12c3 0 5.8 1.1 7.9 3l5.7-5.7C34.5 6.1 29.5 4 24 4 16.3 4 9.7 8.4 6.3 14.7z" />
@@ -100,7 +103,7 @@ export default async function GoogleReviews() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-[var(--bg-elevated)] border border-white/10 rounded-2xl px-6 py-4 min-h-[80px]">
+            <div className="flex items-center gap-3 border border-white/[0.12] rounded-2xl px-6 py-4 min-h-[80px]" style={{background:"linear-gradient(to bottom,#001f56,#000e25)"}}>
               <Image src={ASSETS.iconsWhite.estrela} alt="" width={42} height={42} className="h-[42px] w-auto" />
               <div className="text-left leading-tight">
                 <div className="font-bold text-white text-base">Mais de {count}</div>
@@ -108,7 +111,7 @@ export default async function GoogleReviews() {
               </div>
             </div>
 
-            <div className="flex items-center gap-3 bg-[var(--bg-elevated)] border border-white/10 rounded-2xl px-6 py-4 min-h-[80px]">
+            <div className="flex items-center gap-3 border border-white/[0.12] rounded-2xl px-6 py-4 min-h-[80px]" style={{background:"linear-gradient(to bottom,#001f56,#000e25)"}}>
               <Image src={ASSETS.iconsWhite.alvo} alt="" width={42} height={42} className="h-[42px] w-auto" />
               <div className="text-left leading-tight">
                 <div className="font-bold text-white text-base">Nota máxima</div>

@@ -19,9 +19,16 @@ const container = {
 export default function Hero() {
   return (
     <section id="hero" className="relative overflow-visible">
-      <div className="absolute -top-32 -left-32 w-[480px] h-[480px] bg-[var(--brand-blue)] rounded-full blur-[160px] opacity-50 pointer-events-none" />
-      <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
-      <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />
+      {/* Ambient blue — top left */}
+      <div className="absolute -top-40 -left-40 w-[680px] h-[680px] bg-[var(--brand-blue)] rounded-full blur-[180px] opacity-55 pointer-events-none" />
+      {/* Ambient indigo — mid left, for color richness */}
+      <div className="absolute top-1/3 -left-10 w-[360px] h-[360px] bg-indigo-900 rounded-full blur-[130px] opacity-35 pointer-events-none" />
+      {/* Ambient red — bottom center-right */}
+      <div className="absolute -bottom-20 right-1/4 w-[560px] h-[560px] bg-[var(--accent)] rounded-full blur-[200px] opacity-18 pointer-events-none" />
+      {/* Grid texture */}
+      <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-[0.22] pointer-events-none" />
+      {/* Bottom fade — seamless transition to next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[var(--bg-base)] to-transparent pointer-events-none" />
 
       <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_0.95fr] gap-4 lg:gap-6 items-start">
         <motion.div initial="hidden" animate="visible" variants={container} className="lg:pr-8 lg:self-center lg:-mt-[calc(5rem+50px)]">

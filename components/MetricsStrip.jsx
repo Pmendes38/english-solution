@@ -7,7 +7,7 @@ export default function MetricsStrip() {
   return (
     <section className="container-x -mt-[160px] lg:-mt-[200px] relative z-20 pb-14 lg:pb-20">
       <Reveal>
-        <div className="bg-[rgba(1,11,28,0.80)] backdrop-blur-md border border-white/15 rounded-2xl py-7 lg:py-9 grid grid-cols-2 lg:flex lg:items-center lg:divide-x lg:divide-white/15 gap-y-6 gap-x-0 lg:gap-0">
+        <div className="glass-panel rounded-2xl py-7 lg:py-9 grid grid-cols-2 lg:flex lg:items-center lg:divide-x lg:divide-white/10 gap-y-6 gap-x-0 lg:gap-0">
           {heroStats.map((stat) => (
             <div
               key={stat.label}

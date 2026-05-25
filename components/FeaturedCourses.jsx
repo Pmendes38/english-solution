@@ -62,9 +62,10 @@ export default function FeaturedCourses() {
   const containerRef = useRef(null);
 
   return (
-    <section id="cursos" className="py-16 lg:py-20">
+    <section id="cursos" className="py-16 lg:py-20 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-[var(--brand-blue)] rounded-full blur-[160px] opacity-[0.12] pointer-events-none" />
       <div className="container-x">
-        <div className="backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-2xl p-7 lg:p-12">
+        <div className="glass-panel rounded-2xl p-7 lg:p-12">
           <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
             <div className="max-w-xl">
               <span className="eyebrow">NOSSOS CURSOS</span>

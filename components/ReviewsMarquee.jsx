@@ -50,7 +50,8 @@ function ReviewCard({ review, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className="flex-shrink-0 w-[340px] sm:w-[380px] bg-[var(--bg-elevated)] border border-white/5 hover:border-white/15 rounded-2xl p-6 transition-all text-left flex flex-col h-[260px] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40"
+      className="flex-shrink-0 w-[340px] sm:w-[380px] border border-white/[0.08] hover:border-white/20 rounded-2xl p-6 transition-all text-left flex flex-col h-[260px] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/40"
+      style={{background:"linear-gradient(to bottom,#001d52,#000e27)"}}
       aria-label={`Ler avaliação completa de ${review.author}`}
     >
       <div className="flex items-center gap-3">
