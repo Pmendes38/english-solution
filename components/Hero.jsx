@@ -23,8 +23,8 @@ export default function Hero() {
       <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />
 
-      <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_1.2fr] gap-4 lg:gap-6 items-start">
-        <motion.div initial="hidden" animate="visible" variants={container} className="lg:pr-8 lg:self-center">
+      <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_0.95fr] gap-4 lg:gap-6 items-start">
+        <motion.div initial="hidden" animate="visible" variants={container} className="lg:pr-8 lg:self-center lg:-mt-8">
           <motion.span variants={fadeUp} transition={{ duration: 0.5 }} className="eyebrow">
             INGLÊS QUE TRANSFORMA
           </motion.span>
@@ -32,7 +32,7 @@ export default function Hero() {
           <motion.h1
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="heading-display mt-6 text-[clamp(2.5rem,5.5vw,5.5rem)] lg:text-[clamp(2rem,3.5vw,5rem)]"
+            className="heading-display mt-6 text-[clamp(2.5rem,5.5vw,5.5rem)] lg:text-[clamp(2.4rem,4.2vw,5.8rem)]"
           >
             Você fala inglês
             <br />
