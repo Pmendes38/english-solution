@@ -83,6 +83,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="relative -mr-6 sm:-mr-8 lg:-mr-12 xl:-mr-20"
         >
+          {/* Red glow behind the woman */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] w-[75%] h-[75%] bg-[var(--accent)] rounded-full blur-[90px] opacity-30 pointer-events-none" />
           <Image
             src={ASSETS.photos.heroHome}
             alt="Aluna da English Solution com símbolos do Reino Unido e EUA"
