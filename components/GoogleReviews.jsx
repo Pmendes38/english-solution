@@ -101,7 +101,7 @@ export default async function GoogleReviews() {
             </div>
 
             <div className="flex items-center gap-3 bg-[var(--bg-elevated)] border border-white/10 rounded-2xl px-6 py-4 min-h-[80px]">
-              <Image src={ASSETS.iconsWhite.estrela} alt="" width={42} height={42} />
+              <Image src={ASSETS.iconsWhite.estrela} alt="" width={42} height={42} className="h-[42px] w-auto" />
               <div className="text-left leading-tight">
                 <div className="font-bold text-white text-base">Mais de {count}</div>
                 <div className="text-[var(--text-secondary)] text-xs mt-0.5">Avaliações</div>
@@ -109,7 +109,7 @@ export default async function GoogleReviews() {
             </div>
 
             <div className="flex items-center gap-3 bg-[var(--bg-elevated)] border border-white/10 rounded-2xl px-6 py-4 min-h-[80px]">
-              <Image src={ASSETS.iconsWhite.alvo} alt="" width={42} height={42} />
+              <Image src={ASSETS.iconsWhite.alvo} alt="" width={42} height={42} className="h-[42px] w-auto" />
               <div className="text-left leading-tight">
                 <div className="font-bold text-white text-base">Nota máxima</div>
                 <div className="text-[var(--text-secondary)] text-xs mt-0.5">em atendimento</div>

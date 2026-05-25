@@ -16,7 +16,7 @@ export default function MetricsStrip() {
                   alt=""
                   width={56}
                   height={56}
-                  className="h-14 w-14 flex-shrink-0"
+                  className="h-14 w-auto flex-shrink-0"
                 />
                 <div className="leading-tight">
                   <div className="text-white font-serif font-bold text-2xl lg:text-[28px]">

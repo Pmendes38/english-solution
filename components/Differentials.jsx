@@ -30,7 +30,7 @@ export default function Differentials() {
                     alt=""
                     width={56}
                     height={56}
-                    className="h-14 w-14 mb-3"
+                    className="h-14 w-auto mb-3"
                   />
                   <div className="text-xs text-white leading-tight max-w-[140px]">
                     {item.label}
