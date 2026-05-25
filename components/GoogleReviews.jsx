@@ -60,7 +60,7 @@ export default async function GoogleReviews() {
         <Reveal>
           <div className="relative text-center max-w-3xl mx-auto mb-10">
             <Image
-              src={ASSETS.photos.ornamentLeft}
+              src={ASSETS.photos.ornamentRight}
               alt=""
               width={120}
               height={140}
@@ -68,7 +68,7 @@ export default async function GoogleReviews() {
               aria-hidden="true"
             />
             <Image
-              src={ASSETS.photos.ornamentRight}
+              src={ASSETS.photos.ornamentLeft}
               alt=""
               width={120}
               height={140}
