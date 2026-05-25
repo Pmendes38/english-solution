@@ -55,7 +55,7 @@ export default async function GoogleReviews() {
   const reviewsUrl = isReal && data.mapsUri ? data.mapsUri : contact.googleReviewsUrl;
 
   return (
-    <section id="depoimentos" className="py-16 lg:py-20">
+    <section id="depoimentos" className="py-16 lg:py-20" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, #001940 0%, #000c1f 100%)" }}>
       <div className="container-x">
         <Reveal>
           <div className="relative text-center max-w-3xl mx-auto mb-10">

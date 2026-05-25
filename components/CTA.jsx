@@ -5,11 +5,8 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function CTA() {
   return (
-    <section id="agendar" className="pb-12 lg:pb-20 pt-0 lg:pt-[120px] overflow-hidden">
+    <section id="agendar" className="pb-12 lg:pb-20 pt-0 lg:pt-[120px]">
       <div className="container-x relative">
-
-        {/* Subtle blue ambient — stays contained */}
-        <div className="absolute -inset-x-20 top-0 bottom-0 bg-[var(--brand-blue)] rounded-full blur-[160px] opacity-[0.12] pointer-events-none" />
         {/* Pessoa fora do Reveal para não ser presa no stacking context da animação */}
         <div className="hidden lg:block absolute right-0 bottom-0 z-50 pointer-events-none w-[700px] xl:w-[820px]">
           <Image
@@ -23,7 +20,7 @@ export default function CTA() {
         </div>
 
         <Reveal>
-          <div className="relative rounded-3xl border border-white/[0.12] overflow-hidden shadow-[0_0_80px_rgba(227,30,36,0.12)]">
+          <div className="relative rounded-3xl border border-white/[0.12] overflow-hidden">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ASSETS.photos.bgCta}
