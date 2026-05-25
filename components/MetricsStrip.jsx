@@ -11,20 +11,20 @@ export default function MetricsStrip() {
           {heroStats.map((stat) => (
             <div
               key={stat.label}
-              className="flex items-center gap-4 px-6 lg:flex-1 lg:justify-center lg:px-8"
+              className="flex items-center gap-3 px-4 lg:flex-1 lg:justify-center lg:px-8 min-w-0"
             >
               <Image
                 src={ASSETS.iconsWhite[stat.iconKey] || ASSETS.icons[stat.iconKey]}
                 alt=""
                 width={56}
                 height={56}
-                className="h-12 w-auto flex-shrink-0"
+                className="h-9 lg:h-12 w-auto flex-shrink-0"
               />
-              <div className="leading-tight">
-                <div className="text-white font-serif font-bold text-2xl lg:text-[26px]">
+              <div className="leading-tight min-w-0">
+                <div className="text-white font-serif font-bold text-base lg:text-[26px] leading-tight">
                   {stat.value}
                 </div>
-                <div className="text-[var(--text-secondary)] text-sm">
+                <div className="text-[var(--text-secondary)] text-xs lg:text-sm">
                   {stat.label}
                 </div>
               </div>
