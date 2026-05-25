@@ -18,13 +18,13 @@ const container = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-visible min-h-[700px] lg:min-h-[900px]">
+    <section id="hero" className="relative overflow-visible">
       <div className="absolute -top-32 -left-32 w-[480px] h-[480px] bg-[var(--brand-blue)] rounded-full blur-[160px] opacity-50 pointer-events-none" />
       <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />
 
-      <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_1.2fr] gap-4 lg:gap-6 items-center">
-        <motion.div initial="hidden" animate="visible" variants={container} className="lg:pr-8">
+      <div className="container-x relative z-10 pt-6 lg:pt-10 pb-10 lg:pb-16 grid lg:grid-cols-[1fr_1.2fr] gap-4 lg:gap-6 items-start">
+        <motion.div initial="hidden" animate="visible" variants={container} className="lg:pr-8 lg:self-center">
           <motion.span variants={fadeUp} transition={{ duration: 0.5 }} className="eyebrow">
             INGLÊS QUE TRANSFORMA
           </motion.span>
