@@ -32,7 +32,7 @@ export default function Hero() {
           <motion.h1
             variants={fadeUp}
             transition={{ duration: 0.6 }}
-            className="heading-display mt-6 text-[clamp(2.5rem,5.5vw,5.5rem)]"
+            className="heading-display mt-6 text-[clamp(2.5rem,5.5vw,5.5rem)] lg:text-[clamp(2rem,3.5vw,5rem)]"
           >
             Você fala inglês
             <br />
