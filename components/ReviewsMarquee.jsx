@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, useMotionValue, animate } from "framer-motion";
 import ReviewModal from "@/components/ReviewModal";
 
 function Stars({ count = 5 }) {
@@ -91,41 +91,85 @@ function ReviewCard({ review, onClick }) {
   );
 }
 
+const CARD_WIDTH = 396; // 380px card + 16px gap
+const SPEED = 80; // px per second
+
 export default function ReviewsMarquee({ reviews }) {
   const [selected, setSelected] = useState(null);
-  const [paused, setPaused] = useState(false);
-  const containerRef = useRef(null);
+  const x = useMotionValue(0);
+  const animRef = useRef(null);
+  const draggedRef = useRef(false);
+  const startLoopRef = useRef(null);
 
   if (!reviews?.length) return null;
 
   const loop = [...reviews, ...reviews, ...reviews];
-  const setWidth = reviews.length * 396;
-  const duration = Math.max(20, reviews.length * 6);
+  const setWidth = reviews.length * CARD_WIDTH;
+
+  // Always holds the latest version — safe to call recursively via ref
+  startLoopRef.current = (fromX) => {
+    if (animRef.current) animRef.current.stop();
+
+    // Normalize to (-setWidth, 0]
+    let pos = fromX % setWidth;
+    if (pos > 0) pos -= setWidth;
+    x.set(pos);
+
+    const distance = setWidth + pos; // distance left to reach -setWidth
+    if (distance <= 0) {
+      x.set(0);
+      startLoopRef.current(0);
+      return;
+    }
+
+    animRef.current = animate(x, pos - distance, {
+      duration: distance / SPEED,
+      ease: "linear",
+      onComplete: () => {
+        x.set(0);
+        startLoopRef.current(0);
+      },
+    });
+  };
+
+  useEffect(() => {
+    startLoopRef.current(0);
+    return () => { if (animRef.current) animRef.current.stop(); };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
-      <div
-        ref={containerRef}
-        className="relative overflow-hidden"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onTouchStart={() => setPaused(true)}
-        onTouchEnd={() => setPaused(false)}
-      >
+      <div className="relative overflow-hidden select-none">
         <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-[var(--bg-base)] to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-[var(--bg-base)] to-transparent z-10" />
 
         <motion.div
-          className="flex gap-4"
-          animate={{ x: paused ? undefined : [0, -setWidth] }}
-          transition={{ duration, ease: "linear", repeat: Infinity }}
-          style={{ width: "max-content" }}
+          className="flex gap-4 cursor-grab active:cursor-grabbing"
+          style={{ x, width: "max-content" }}
+          drag="x"
+          dragConstraints={{ left: -setWidth * 2, right: 0 }}
+          dragElastic={0}
+          dragMomentum={false}
+          onDragStart={() => {
+            draggedRef.current = false;
+            if (animRef.current) animRef.current.stop();
+          }}
+          onDrag={(_, info) => {
+            if (Math.abs(info.offset.x) > 5) draggedRef.current = true;
+          }}
+          onDragEnd={() => {
+            const resumeX = x.get();
+            setTimeout(() => startLoopRef.current(resumeX), 300);
+            setTimeout(() => { draggedRef.current = false; }, 350);
+          }}
         >
           {loop.map((r, i) => (
             <ReviewCard
               key={`${r.author}-${i}`}
               review={r}
-              onClick={() => setSelected(r)}
+              onClick={() => {
+                if (!draggedRef.current) setSelected(r);
+              }}
             />
           ))}
         </motion.div>
