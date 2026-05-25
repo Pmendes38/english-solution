@@ -1,5 +1,6 @@
 import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
+import ContactForm from "@/components/ContactForm";
 import { contact, schedule } from "@/data/site";
 import { ASSETS } from "@/lib/assets";
 
@@ -20,52 +21,7 @@ export default function ContactPage() {
 
       <section className="py-16 lg:py-24">
         <div className="container-x grid lg:grid-cols-[3fr_2fr] gap-10 items-start">
-          <form className="bg-[var(--bg-elevated)] border border-white/5 rounded-3xl p-8 lg:p-10 space-y-5">
-            <div className="grid sm:grid-cols-2 gap-4">
-              <label className="block">
-                <span className="text-sm font-semibold text-white mb-2 block">Nome</span>
-                <input type="text" name="name" className="input-dark w-full" placeholder="Seu nome completo" />
-              </label>
-              <label className="block">
-                <span className="text-sm font-semibold text-white mb-2 block">WhatsApp</span>
-                <input type="tel" name="phone" className="input-dark w-full" placeholder="(61) 99999-9999" />
-              </label>
-            </div>
-
-            <label className="block">
-              <span className="text-sm font-semibold text-white mb-2 block">E-mail</span>
-              <input type="email" name="email" className="input-dark w-full" placeholder="seu@email.com" />
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-semibold text-white mb-2 block">Qual seu objetivo?</span>
-              <select name="goal" className="input-dark w-full" defaultValue="">
-                <option value="" disabled>Selecione…</option>
-                <option>Aula experimental</option>
-                <option>Curso para mim</option>
-                <option>Curso para meu time / empresa</option>
-                <option>Outro</option>
-              </select>
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-semibold text-white mb-2 block">Mensagem</span>
-              <textarea name="message" rows={4} className="input-dark w-full resize-none" placeholder="Conta um pouco sobre o que você procura…" />
-            </label>
-
-            <p className="text-xs text-[var(--text-muted)]">
-              Ao enviar, você concorda em receber retorno pelos canais informados.
-            </p>
-
-            <a
-              href={contact.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary w-full justify-center"
-            >
-              Enviar mensagem
-            </a>
-          </form>
+          <ContactForm />
 
           <aside className="space-y-4">
             <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6">
