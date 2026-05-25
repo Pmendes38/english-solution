@@ -7,7 +7,7 @@ export default function FeaturedCourses() {
   return (
     <section id="cursos" className="py-16 lg:py-20">
       <div className="container-x">
-        <div className="backdrop-blur-sm bg-[rgba(0,19,42,0.98)] border border-white/20 rounded-2xl p-7 lg:p-12">
+        <div>
           <Reveal className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
             <div className="max-w-xl">
               <span className="eyebrow">NOSSOS CURSOS</span>
