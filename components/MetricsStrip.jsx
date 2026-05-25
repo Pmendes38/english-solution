@@ -5,7 +5,7 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function MetricsStrip() {
   return (
-    <section className="container-x -mt-[90px] lg:-mt-[130px] relative z-20 pb-14 lg:pb-20">
+    <section className="container-x -mt-[160px] lg:-mt-[200px] relative z-20 pb-14 lg:pb-20">
       <Reveal>
         <div className="bg-[rgba(1,11,28,0.80)] backdrop-blur-md border border-white/15 rounded-2xl px-8 lg:px-14 py-7 lg:py-9 grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-y-6 gap-x-0 items-center">
           {heroStats.map((stat, idx) => (
