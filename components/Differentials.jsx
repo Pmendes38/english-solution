@@ -11,7 +11,7 @@ export default function Differentials() {
         <div className="backdrop-blur-md bg-white/[0.04] border border-white/10 rounded-[20px] px-8 lg:px-14 py-10 lg:py-14 grid lg:grid-cols-[1fr_auto_2fr] gap-8 lg:gap-12 items-center">
           <Reveal>
             <span className="eyebrow">POR QUE SOMOS REFERÊNCIA NA REGIÃO?</span>
-            <h2 className="heading-display mt-4 text-3xl lg:text-[34px] leading-tight">
+            <h2 className="heading-display mt-4 text-4xl lg:text-5xl leading-tight">
               Mais que uma escola,<br /> uma escolha inteligente
             </h2>
           </Reveal>
@@ -28,11 +28,11 @@ export default function Differentials() {
                   <Image
                     src={ASSETS.iconsWhite[item.icon] || ASSETS.icons[item.icon]}
                     alt=""
-                    width={56}
-                    height={56}
-                    className="h-14 w-auto mb-3"
+                    width={80}
+                    height={80}
+                    className="h-20 w-auto mb-4"
                   />
-                  <div className="text-xs text-white leading-tight max-w-[140px]">
+                  <div className="text-sm lg:text-base text-white leading-snug max-w-[140px]">
                     {item.label}
                   </div>
                 </div>
