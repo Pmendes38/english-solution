@@ -64,7 +64,7 @@ export default async function GoogleReviews() {
               alt=""
               width={120}
               height={140}
-              className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 opacity-80 h-24 w-auto"
+              className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 opacity-80 h-24 w-auto scale-x-[-1]"
               aria-hidden="true"
             />
             <Image
