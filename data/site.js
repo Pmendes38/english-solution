@@ -481,26 +481,44 @@ export const featuredCourses = [
   {
     slug: "business-english",
     tag: "Business English",
-    title: "Comunicação eficaz para o ambiente corporativo.",
+    title: "Comunicação eficaz",
+    subtitle: "Para se destacar no ambiente corporativo",
     image: "/brand/photos/cursos/business.png",
   },
   {
     slug: "intermediario",
     tag: "Inglês Geral",
-    title: "Do básico ao avançado com fluência para todas as idades.",
+    title: "Do básico ao avançado",
+    subtitle: "Focado fluência e confiança para todos",
     image: "/brand/photos/cursos/geral.png",
   },
   {
     slug: "intensivo-de-ferias",
     tag: "Inglês para Viagens",
-    title: "Viaje com segurança e comunique-se em qualquer lugar do mundo.",
+    title: "Viaje com segurança",
+    subtitle: "Se comunique em qualquer lugar do mundo",
     image: "/brand/photos/cursos/viagens.png",
   },
   {
     slug: "ingles-para-empresas",
     tag: "English in Company",
-    title: "Para times que precisam falar inglês no trabalho.",
+    title: "Treinamento Empresarial",
+    subtitle: "Para times que precisam falar inglês no dia a dia",
     image: "/brand/photos/cursos/empresas.png",
+  },
+  {
+    slug: "aulas-particulares",
+    tag: "Aulas Particulares",
+    title: "Foco total",
+    subtitle: "Aulas individuais com plano sob medida para o seu objetivo específico.",
+    image: "/brand/photos/cursos/particulares.png",
+  },
+  {
+    slug: "curso-online",
+    tag: "Online",
+    title: "Flexibilidade total",
+    subtitle: "Mesma metodologia conversacional, no formato ao vivo com o professor.",
+    image: "/brand/photos/cursos/online.png",
   },
 ];
 
