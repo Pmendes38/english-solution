@@ -5,9 +5,9 @@ import Reveal from "@/components/motion/Reveal";
 
 export default function MetricsStrip() {
   return (
-    <section className="container-x -mt-10 relative z-10 pb-14 lg:pb-20">
+    <section className="container-x -mt-16 lg:-mt-28 relative z-20 pb-14 lg:pb-20">
       <Reveal>
-        <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl px-8 lg:px-14 py-7 lg:py-9 grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-y-6 gap-x-0 items-center">
+        <div className="bg-[rgba(1,11,28,0.80)] backdrop-blur-md border border-white/15 rounded-2xl px-8 lg:px-14 py-7 lg:py-9 grid grid-cols-2 lg:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] gap-y-6 gap-x-0 items-center">
           {heroStats.map((stat, idx) => (
             <div key={stat.label} className="contents">
               <div className="flex items-center gap-5 lg:px-6 first:lg:pl-0 last:lg:pr-0">
