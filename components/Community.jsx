@@ -9,24 +9,30 @@ export default function Community() {
       <div className="container-x grid lg:grid-cols-[869fr_839fr] gap-10 lg:gap-16 items-start">
         <Reveal>
           <div className="grid grid-cols-2 gap-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={ASSETS.photos.comunidade[0]}
-              alt="Sala de aula English Solution"
-              className="col-span-2 w-full aspect-[869/302] object-cover rounded-2xl border-0"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={ASSETS.photos.comunidade[1]}
-              alt="Comunidade English Solution"
-              className="w-full aspect-[427/227] object-cover rounded-2xl border-0"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={ASSETS.photos.comunidade[2]}
-              alt="Comunidade English Solution"
-              className="w-full aspect-[434/227] object-cover rounded-2xl border-0"
-            />
+            <div className="col-span-2 rounded-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ASSETS.photos.comunidade[0]}
+                alt="Sala de aula English Solution"
+                className="w-full aspect-[869/302] object-cover block"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ASSETS.photos.comunidade[1]}
+                alt="Comunidade English Solution"
+                className="w-full aspect-[427/227] object-cover block"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={ASSETS.photos.comunidade[2]}
+                alt="Comunidade English Solution"
+                className="w-full aspect-[434/227] object-cover block"
+              />
+            </div>
           </div>
         </Reveal>
 
