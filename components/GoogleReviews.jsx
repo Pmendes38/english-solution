@@ -55,10 +55,7 @@ export default async function GoogleReviews() {
   const reviewsUrl = isReal && data.mapsUri ? data.mapsUri : contact.googleReviewsUrl;
 
   return (
-    <section id="depoimentos" className="py-16 lg:py-20 relative overflow-hidden">
-      {/* Ambient glow centered behind header */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[var(--brand-blue)] rounded-full blur-[140px] opacity-[0.15] pointer-events-none" />
-      <div className="absolute top-8 right-8 w-[280px] h-[280px] bg-[var(--accent)] rounded-full blur-[120px] opacity-[0.07] pointer-events-none" />
+    <section id="depoimentos" className="py-16 lg:py-20">
       <div className="container-x">
         <Reveal>
           <div className="relative text-center max-w-3xl mx-auto mb-10">
