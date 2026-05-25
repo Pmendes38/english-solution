@@ -83,7 +83,7 @@ export default function LocationPreview() {
                 src={embedSrc}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "420px" }}
+                style={{ border: 0, minHeight: "420px", filter: "invert(90%) hue-rotate(180deg) saturate(0.8)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -95,7 +95,7 @@ export default function LocationPreview() {
                 src={`https://maps.google.com/maps?q=English+Solution+Valpara%C3%ADso+de+Goi%C3%A1s&output=embed&z=16`}
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "420px" }}
+                style={{ border: 0, minHeight: "420px", filter: "invert(90%) hue-rotate(180deg) saturate(0.8)" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

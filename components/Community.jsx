@@ -13,19 +13,19 @@ export default function Community() {
             <img
               src={ASSETS.photos.comunidade[0]}
               alt="Sala de aula English Solution"
-              className="col-span-2 w-full aspect-[869/302] object-cover rounded-2xl"
+              className="col-span-2 w-full aspect-[869/302] object-cover rounded-2xl border-0"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ASSETS.photos.comunidade[1]}
               alt="Comunidade English Solution"
-              className="w-full aspect-[427/227] object-cover rounded-2xl"
+              className="w-full aspect-[427/227] object-cover rounded-2xl border-0"
             />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ASSETS.photos.comunidade[2]}
               alt="Comunidade English Solution"
-              className="w-full aspect-[434/227] object-cover rounded-2xl"
+              className="w-full aspect-[434/227] object-cover rounded-2xl border-0"
             />
           </div>
         </Reveal>

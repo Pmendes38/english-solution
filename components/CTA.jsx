@@ -56,13 +56,13 @@ export default function CTA() {
             </div>
 
             {/* HOMEM CTA ultrapassa a faixa, posicionado absolutamente */}
-            <div className="hidden lg:block absolute right-6 bottom-0 z-20 pointer-events-none w-[420px] xl:w-[520px]">
+            <div className="hidden lg:block absolute right-0 bottom-0 z-30 pointer-events-none w-[500px] xl:w-[660px]">
               <Image
                 src={ASSETS.photos.ctaFinalAluno}
                 alt="Aluno English Solution"
                 width={810}
                 height={836}
-                className="w-full h-auto -mt-16 xl:-mt-24"
+                className="w-full h-auto -mt-20 xl:-mt-32"
                 priority={false}
               />
             </div>
