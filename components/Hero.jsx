@@ -23,8 +23,6 @@ export default function Hero() {
       <div className="absolute -top-40 -left-40 w-[680px] h-[680px] bg-[var(--brand-blue)] rounded-full blur-[180px] opacity-55 pointer-events-none" />
       {/* Ambient indigo — mid left, for color richness */}
       <div className="absolute top-1/3 -left-10 w-[360px] h-[360px] bg-indigo-900 rounded-full blur-[130px] opacity-35 pointer-events-none" />
-      {/* Ambient red — bottom center-right */}
-      <div className="absolute -bottom-20 right-1/4 w-[560px] h-[560px] bg-[var(--accent)] rounded-full blur-[200px] opacity-18 pointer-events-none" />
       {/* Grid texture */}
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-[0.22] pointer-events-none" />
       {/* Bottom fade — seamless transition to next section */}
