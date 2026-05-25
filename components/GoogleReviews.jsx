@@ -1,9 +1,31 @@
 import Image from "next/image";
 import { contact } from "@/data/site";
-import { fetchGoogleReviews } from "@/lib/google-reviews";
+import { fetchAllReviews } from "@/lib/reviews-source";
+import { extraReviews } from "@/data/extra-reviews";
 import { ASSETS } from "@/lib/assets";
 import Reveal from "@/components/motion/Reveal";
 import ReviewsMarquee from "@/components/ReviewsMarquee";
+
+function dedupKey(r) {
+  const text = (r.text || "").replace(/\s+/g, "").slice(0, 60).toLowerCase();
+  return `${(r.author || "").toLowerCase()}|${text}`;
+}
+
+function mergeUniqueReviews(...lists) {
+  const seen = new Set();
+  const out = [];
+  for (const list of lists) {
+    if (!Array.isArray(list)) continue;
+    for (const r of list) {
+      const k = dedupKey(r);
+      if (!seen.has(k) && r && r.text && r.text.trim().length > 0) {
+        seen.add(k);
+        out.push({ photo: null, rating: 5, relativeTime: "", ...r });
+      }
+    }
+  }
+  return out;
+}
 
 function Stars({ count = 5, size = 14 }) {
   return (
@@ -25,16 +47,16 @@ function Stars({ count = 5, size = 14 }) {
 }
 
 export default async function GoogleReviews() {
-  const data = await fetchGoogleReviews();
-  const isReal = !!data && Array.isArray(data.reviews) && data.reviews.length > 0;
+  const data = await fetchAllReviews();
+  const apiReviews = data?.reviews ?? [];
 
-  // Apenas reviews REAIS do Google. Se a API falhar, marquee fica vazio
-  // (a seção continua exibindo as pills com rating).
-  const allReviews = isReal ? data.reviews : [];
+  // Mescla reviews reais da API com extras verificados (copiados
+  // manualmente do Google Maps). Dedup automático por autor+texto.
+  const allReviews = mergeUniqueReviews(apiReviews, extraReviews);
 
-  const rating = isReal ? data.rating ?? 5.0 : 5.0;
-  const count = isReal ? data.userRatingCount ?? 200 : 200;
-  const reviewsUrl = isReal && data.mapsUri ? data.mapsUri : contact.googleReviewsUrl;
+  const rating = data?.rating ?? 5.0;
+  const count = data?.userRatingCount ?? 200;
+  const reviewsUrl = data?.mapsUri ?? contact.googleReviewsUrl;
 
   return (
     <section id="depoimentos" className="py-16 lg:py-20">
