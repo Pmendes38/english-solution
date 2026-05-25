@@ -8,7 +8,7 @@ export default function Differentials() {
   return (
     <section id="diferenciais" className="py-12 lg:py-16">
       <div className="container-x">
-        <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl px-8 lg:px-14 py-10 lg:py-14 grid lg:grid-cols-[1fr_auto_2fr] gap-8 lg:gap-12 items-center">
+        <div className="bg-gradient-to-r from-[rgba(0,12,31,0.7)] to-[rgba(0,51,133,0.24)] border border-white/35 rounded-[20px] px-8 lg:px-14 py-10 lg:py-14 grid lg:grid-cols-[1fr_auto_2fr] gap-8 lg:gap-12 items-center">
           <Reveal>
             <span className="eyebrow">POR QUE SOMOS REFERÊNCIA NA REGIÃO?</span>
             <h2 className="heading-display mt-4 text-3xl lg:text-[34px] leading-tight">
@@ -21,7 +21,7 @@ export default function Differentials() {
             className="hidden lg:block w-px h-32 bg-white/15"
           />
 
-          <StaggerGroup className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4">
+          <StaggerGroup className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
             {differentialsHome.map((item) => (
               <StaggerItem key={item.label}>
                 <div className="flex flex-col items-center text-center">

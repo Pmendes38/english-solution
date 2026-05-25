@@ -18,7 +18,7 @@ const container = {
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="hero" className="relative overflow-visible min-h-[700px] lg:min-h-[900px]">
       <div className="absolute -top-32 -left-32 w-[480px] h-[480px] bg-[var(--brand-blue)] rounded-full blur-[160px] opacity-50 pointer-events-none" />
       <div className="absolute -bottom-20 right-1/4 w-[480px] h-[480px] bg-[var(--accent)] rounded-full blur-[180px] opacity-15 pointer-events-none" />
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-30 pointer-events-none" />

@@ -13,9 +13,9 @@
   --brand-gray-light: #F2F2F2;
 
   /* Sistema dark derivado */
-  --bg-base: #04122B;
-  --bg-elevated: #07204A;
-  --bg-overlay: #0A2D63;
+  --bg-base: #000c1f;
+  --bg-elevated: #001a44;
+  --bg-overlay: #002d64;
   --border-subtle: rgba(120, 160, 255, 0.10);
   --border-default: rgba(120, 160, 255, 0.18);
 

@@ -1,32 +1,30 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ASSETS } from "@/lib/assets";
 import Reveal from "@/components/motion/Reveal";
 import { StaggerGroup, StaggerItem } from "@/components/motion/Stagger";
 
 const pillars = [
   {
-    icon: ASSETS.iconsWhite.conversas,
+    number: "01",
     title: "Conversação desde a primeira aula",
     description: "Sem meses decorando regras. Você fala, ouve, interage e ganha confiança desde o início.",
   },
   {
-    icon: ASSETS.icons.rede,
+    number: "02",
     title: "Experiência prática e imersiva",
     description: "Atividades em grupo, simulações reais e situações do dia a dia para vivenciar o idioma.",
   },
   {
-    icon: ASSETS.iconsWhite.pessoas,
+    number: "03",
     title: "Aulas dinâmicas e humanas",
     description: "Professores próximos, turmas reduzidas e ambiente acolhedor para você se sentir à vontade.",
   },
   {
-    icon: ASSETS.icons.livro,
+    number: "04",
     title: "Sem dependência de livros caros",
     description: "Material próprio, atualizado e prático. Você não precisa comprar livros importados todo semestre.",
   },
   {
-    icon: ASSETS.iconsWhite.alvo,
+    number: "05",
     title: "Foco em confiança para falar",
     description: "Mais do que gramática: trabalhamos a perda do medo de errar e a fluência real de comunicação.",
   },
@@ -55,8 +53,8 @@ export default function Methodology() {
           {pillars.map((p) => (
             <StaggerItem key={p.title}>
               <div className="flex items-start gap-4 bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-5 hover:border-white/15 transition-colors">
-                <div className="w-11 h-11 rounded-lg bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
-                  <Image src={p.icon} alt="" width={26} height={26} />
+                <div className="bg-[var(--accent)] text-white font-bold w-10 h-10 flex items-center justify-center rounded-lg flex-shrink-0">
+                  {p.number}
                 </div>
                 <div>
                   <h3 className="font-bold text-white text-base">{p.title}</h3>

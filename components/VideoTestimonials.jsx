@@ -67,47 +67,50 @@ export default function VideoTestimonials() {
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10"
+          className="border-2 border-white/30 rounded-3xl p-8 lg:p-12 flex flex-col lg:flex-row gap-10 lg:gap-12 items-start"
+          style={{
+            background: "radial-gradient(ellipse at center, rgba(1,11,28,0.9) 0%, rgba(0,12,31,1) 100%)",
+          }}
         >
-          <div className="max-w-xl">
+          {/* Left col */}
+          <div className="lg:w-1/3 flex-shrink-0">
             <span className="eyebrow">HISTÓRIAS REAIS</span>
             <h2 className="heading-display mt-4 text-3xl lg:text-4xl">
-              Ouça quem já destravou
-              <br /> o inglês com a gente
+              Ouça quem já destravou o inglês com a gente
             </h2>
             <p className="mt-4 text-[var(--text-secondary)]">
               Alunos reais. Resultados reais.
             </p>
+            <a href="#depoimentos" className="btn-secondary mt-6 self-start text-sm inline-flex">
+              Ver mais depoimentos →
+            </a>
           </div>
 
-          <a href="#depoimentos" className="btn-secondary self-start text-sm">
-            Ver mais depoimentos →
-          </a>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          variants={{
-            hidden: {},
-            visible: { transition: { staggerChildren: 0.12 } },
-          }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
-        >
-          {videoTestimonials.map((item) => (
-            <motion.div
-              key={item.name}
-              variants={{
-                hidden: { opacity: 0, y: 28 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
-              }}
-            >
-              <VideoCard item={item} />
-            </motion.div>
-          ))}
+          {/* Right col */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.12 } },
+            }}
+            className="lg:w-2/3 grid sm:grid-cols-3 gap-5 w-full"
+          >
+            {videoTestimonials.map((item) => (
+              <motion.div
+                key={item.name}
+                variants={{
+                  hidden: { opacity: 0, y: 28 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
+                }}
+              >
+                <VideoCard item={item} />
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
