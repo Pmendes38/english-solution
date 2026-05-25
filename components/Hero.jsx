@@ -24,7 +24,7 @@ export default function Hero() {
       {/* Ambient indigo — mid left, for color richness */}
       <div className="absolute top-1/3 -left-10 w-[360px] h-[360px] bg-indigo-900 rounded-full blur-[130px] opacity-35 pointer-events-none" />
       {/* Red glow — behind the woman on the right */}
-      <div className="absolute top-[10%] right-[5%] w-[520px] h-[520px] bg-[var(--accent)] rounded-full blur-[120px] opacity-25 pointer-events-none" />
+      <div className="absolute top-[5%] right-[2%] w-[600px] h-[600px] bg-[var(--accent)] rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none" />
       {/* Grid texture */}
       <div className="absolute inset-0 bg-brand-grid bg-[length:32px_32px] opacity-[0.22] pointer-events-none" />
       {/* Bottom fade — seamless transition to next section */}
