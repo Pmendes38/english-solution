@@ -1,4 +1,5 @@
 import { Montserrat, Tinos } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
     >
       <body className="bg-[var(--bg-base)] text-[var(--text-primary)] font-sans overflow-x-hidden antialiased">
         {children}
+        <Analytics />
       </body>
     </html>
   );
