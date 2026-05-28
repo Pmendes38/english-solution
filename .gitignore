@@ -9,3 +9,7 @@ out/
 
 .vercel
 .backups/
+
+# vídeos-fonte pesados (somente os MP4 otimizados em public/ vão pro repo)
+*.MOV
+*.mov

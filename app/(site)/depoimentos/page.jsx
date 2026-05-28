@@ -1,4 +1,5 @@
 import PageHeader from "@/components/PageHeader";
+import RafaelEvolution from "@/components/RafaelEvolution";
 import GoogleReviews from "@/components/GoogleReviews";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import CTA from "@/components/CTA";
@@ -28,6 +29,7 @@ export default function TestimonialsPage() {
         </a>
       </PageHeader>
 
+      <RafaelEvolution />
       <VideoTestimonials />
       <GoogleReviews />
       <CTA />
