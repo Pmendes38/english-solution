@@ -68,16 +68,13 @@ export default async function CoursePage({ params }) {
       <section className="py-16 lg:py-20">
         <div className="container-x grid sm:grid-cols-3 gap-4">
           {[
-            { icon: ASSETS.icons.pessoas, label: "Para quem é", value: course.audience },
+            { icon: ASSETS.iconsWhite.pessoas, label: "Para quem é", value: course.audience },
             { icon: ASSETS.icons.calendario, label: "Duração", value: course.duration },
-            { icon: ASSETS.icons.local, label: "Formato", value: course.format },
+            { icon: ASSETS.iconsWhite.local, label: "Formato", value: course.format },
           ].map((info) => (
-            <div
-              key={info.label}
-              className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6"
-            >
+            <div key={info.label} className="glass-panel p-6">
               <div className="flex items-center gap-3 mb-3">
-                <Image src={info.icon} alt="" width={28} height={28} />
+                <Image src={info.icon} alt="" width={28} height={28} className="h-7 w-auto" />
                 <span className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">
                   {info.label}
                 </span>
@@ -100,7 +97,7 @@ export default async function CoursePage({ params }) {
               {course.bullets.map((b) => (
                 <li
                   key={b}
-                  className="flex items-start gap-3 bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-5"
+                  className="flex items-start gap-3 glass-panel p-5"
                 >
                   <span className="w-8 h-8 rounded-full bg-[var(--accent)] text-white flex items-center justify-center font-bold flex-shrink-0">
                     ✓
@@ -154,10 +151,7 @@ export default async function CoursePage({ params }) {
 
           <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {stepsTemplate.map((s, i) => (
-              <li
-                key={s.title}
-                className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6"
-              >
+              <li key={s.title} className="glass-panel p-6">
                 <div className="font-serif font-bold text-[var(--accent)] text-3xl">
                   {String(i + 1).padStart(2, "0")}
                 </div>
@@ -186,7 +180,7 @@ export default async function CoursePage({ params }) {
               <Link
                 key={c.slug}
                 href={`/cursos/${c.slug}`}
-                className="group block bg-[var(--bg-elevated)] rounded-2xl overflow-hidden border border-white/5 hover:border-white/15 hover:-translate-y-1 transition-all"
+                className="group block glass-panel overflow-hidden hover:border-white/20 hover:-translate-y-1 transition-all"
               >
                 <div className="relative h-44 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -195,7 +189,7 @@ export default async function CoursePage({ params }) {
                     alt={c.title}
                     className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-elevated)]/95 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/90 via-transparent to-transparent" />
                 </div>
                 <div className="p-5">
                   <div className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">

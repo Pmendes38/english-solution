@@ -12,17 +12,17 @@ export const metadata = {
 
 const infoCards = [
   {
-    icon: ASSETS.icons.local,
+    icon: ASSETS.iconsWhite.local,
     label: "Endereço",
     value: contact.addressLine,
   },
   {
-    icon: ASSETS.icons.calendario,
+    icon: ASSETS.iconsWhite.estrela,
     label: "Horários",
     value: schedule.map((s) => `${s.label}: ${s.value}`).join(" · "),
   },
   {
-    icon: ASSETS.icons.whatsapp,
+    icon: ASSETS.iconsWhite.whatsapp,
     label: "Contato direto",
     value: contact.phoneDisplay,
     href: contact.whatsapp,
@@ -42,11 +42,8 @@ export default function LocationPage() {
         <div className="container-x">
           <div className="grid sm:grid-cols-3 gap-4 mb-12">
             {infoCards.map((c) => (
-              <div
-                key={c.label}
-                className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6"
-              >
-                <Image src={c.icon} alt="" width={36} height={36} className="mb-4" />
+              <div key={c.label} className="glass-panel p-6">
+                <Image src={c.icon} alt="" width={36} height={36} className="h-9 w-auto mb-4" />
                 <div className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">
                   {c.label}
                 </div>

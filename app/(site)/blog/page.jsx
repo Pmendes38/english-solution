@@ -19,7 +19,7 @@ export default function BlogPage() {
 
       <section className="py-16 lg:py-24">
         <div className="container-x">
-          <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-3xl p-12 lg:p-20 text-center max-w-3xl mx-auto">
+          <div className="glass-panel rounded-3xl p-12 lg:p-20 text-center max-w-3xl mx-auto">
             <div className="inline-block px-4 py-1.5 rounded-full bg-[var(--accent)]/10 text-[var(--accent)] text-xs font-bold uppercase tracking-widest mb-6">
               Em breve
             </div>

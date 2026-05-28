@@ -24,9 +24,9 @@ export default function ContactPage() {
           <ContactForm />
 
           <aside className="space-y-4">
-            <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6">
+            <div className="glass-panel p-6">
               <div className="flex items-center gap-3 mb-2">
-                <Image src={ASSETS.icons.whatsapp} alt="" width={28} height={28} />
+                <Image src={ASSETS.iconsWhite.whatsapp} alt="" width={28} height={28} className="h-7 w-auto" />
                 <span className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">WhatsApp</span>
               </div>
               <a
@@ -39,17 +39,17 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6">
+            <div className="glass-panel p-6">
               <div className="flex items-center gap-3 mb-2">
-                <Image src={ASSETS.icons.local} alt="" width={28} height={28} />
+                <Image src={ASSETS.iconsWhite.local} alt="" width={28} height={28} className="h-7 w-auto" />
                 <span className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">Endereço</span>
               </div>
               <div className="text-white font-semibold">{contact.addressLine}</div>
             </div>
 
-            <div className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6">
+            <div className="glass-panel p-6">
               <div className="flex items-center gap-3 mb-3">
-                <Image src={ASSETS.icons.calendario} alt="" width={28} height={28} />
+                <Image src={ASSETS.iconsWhite.estrela} alt="" width={28} height={28} className="h-7 w-auto" />
                 <span className="text-xs uppercase tracking-widest font-bold text-[var(--accent)]">Horários</span>
               </div>
               <ul className="space-y-1 text-[var(--text-secondary)] text-sm">

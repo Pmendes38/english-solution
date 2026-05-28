@@ -24,8 +24,8 @@ export default function DifferentialsPage() {
     <>
       <PageHeader
         eyebrow="DIFERENCIAIS"
-        title="Por que somos referência na região."
-        description="Não é só uma escola de inglês. É uma comunidade, uma metodologia e um time apaixonado por ver gente destravando a fala."
+        title="Não é sorte ser a mais bem avaliada."
+        description="É método, gente boa e cuidado com cada aluno. Veja o que faz a English Solution ser referência em Valparaíso."
       />
 
       <section className="py-16 lg:py-20">

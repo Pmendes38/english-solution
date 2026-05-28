@@ -14,8 +14,8 @@ export default function FaqPage() {
     <>
       <PageHeader
         eyebrow="FAQ"
-        title="Perguntas que recebemos sempre."
-        description="Reunimos aqui as dúvidas mais comuns. Não achou a sua? Chama no WhatsApp."
+        title="Tira sua dúvida antes da primeira aula."
+        description="Juntamos aqui o que mais perguntam pra gente. Não achou a sua? Chama no WhatsApp que a gente responde rapidinho."
       >
         <a
           href={contact.whatsapp}

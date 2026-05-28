@@ -15,8 +15,8 @@ export default function CoursesPage() {
     <>
       <PageHeader
         eyebrow="NOSSOS CURSOS"
-        title="Um caminho para cada objetivo."
-        description="Do iniciante absoluto ao profissional em reuniões internacionais. Escolha a modalidade certa para você."
+        title="Tem um caminho certo pro seu inglês."
+        description="Do primeiro 'hello' à reunião internacional. Escolha por onde começar — a gente te leva até a fluência."
       >
         <div className="flex flex-col sm:flex-row gap-3">
           <a
@@ -39,7 +39,7 @@ export default function CoursesPage() {
             <StaggerItem key={course.slug}>
               <Link
                 href={`/cursos/${course.slug}`}
-                className="group h-full block bg-[var(--bg-elevated)] rounded-2xl overflow-hidden border border-white/5 hover:border-white/15 hover:-translate-y-1 transition-all flex flex-col"
+                className="group h-full glass-panel overflow-hidden hover:border-white/20 hover:-translate-y-1 transition-all flex flex-col"
               >
                 <div className="relative h-56 overflow-hidden">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -48,7 +48,7 @@ export default function CoursesPage() {
                     alt={course.title}
                     className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-elevated)]/95 via-[var(--bg-elevated)]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-base)]/90 via-[var(--bg-base)]/20 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
                     <span className="bg-white text-[var(--brand-blue)] text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
                       {course.shortTitle}

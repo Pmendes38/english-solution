@@ -15,8 +15,8 @@ export default function TestimonialsPage() {
     <>
       <PageHeader
         eyebrow="DEPOIMENTOS"
-        title="Quem viveu a English Solution conta."
-        description="5.0 no Google com mais de 190 avaliações reais e depoimentos em vídeo de alunos que destravaram a fala."
+        title="A prova tá na boca de quem estuda aqui."
+        description="5.0 no Google, mais de 200 avaliações reais e vídeos de alunos que saíram do 'eu travo' para o 'eu converso'."
       >
         <a
           href={contact.googleReviewsUrl}

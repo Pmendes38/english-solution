@@ -14,48 +14,48 @@ export const metadata = {
 
 const pillars = [
   {
-    icon: ASSETS.icons.conversas,
+    icon: ASSETS.iconsWhite.conversas,
     title: "Conversação desde a primeira aula",
     description:
-      "Sem meses decorando regras antes de falar. Aqui você usa o inglês na prática desde a primeira aula, em situações reais e dinâmicas.",
+      "Esquece meses decorando regra antes de abrir a boca. Aqui você fala inglês na primeira aula — em situações reais, com gente de verdade.",
     image: ASSETS.photos.depoimentos[1],
   },
   {
-    icon: ASSETS.icons.rede,
+    icon: ASSETS.iconsWhite.ambiente,
     title: "Experiências práticas e imersivas",
     description:
-      "Aulas dinâmicas com temas do mundo real: viagens, trabalho, entretenimento e cultura. Aprendizado contextualizado de verdade.",
+      "Viagem, trabalho, série, música. As aulas trazem o mundo real pra dentro da sala — você aprende usando o inglês que vai usar de verdade.",
     image: ASSETS.photos.comunidade[2],
   },
   {
-    icon: ASSETS.icons.pessoas,
-    title: "Professores especialistas e próximos",
+    icon: ASSETS.iconsWhite.pessoas,
+    title: "Professores próximos e dedicados",
     description:
-      "Acompanhamento humanizado. Cada aluno tem nome, ritmo e meta. Nada de turmas gigantescas onde você é mais um número.",
+      "Aqui você tem nome, ritmo e meta. Nada de turma lotada onde você vira número. O professor acompanha sua evolução de perto.",
     image: ASSETS.photos.depoimentos[2],
   },
   {
-    icon: ASSETS.icons.livro,
-    title: "Sem dependência de livros caros",
+    icon: ASSETS.iconsWhite.alvo,
+    title: "Sem livro caro obrigatório",
     description:
-      "Material próprio incluso, atualizado e pensado para a realidade do aluno brasileiro. Você não compra nada importado.",
+      "Material próprio, atualizado e pensado pro aluno brasileiro — já incluso. Você não gasta uma fortuna em livro importado todo semestre.",
     image: ASSETS.photos.estudante,
   },
   {
-    icon: ASSETS.icons.alvo,
-    title: "Aulas ao vivo em pequenos grupos",
+    icon: ASSETS.iconsWhite.shield,
+    title: "Turmas reduzidas, ao vivo",
     description:
-      "Mais prática, mais atenção, mais resultados. Turmas reduzidas para garantir que todo mundo fala, escuta e evolui.",
+      "Mais prática, mais atenção, mais resultado. Turma pequena garante que todo mundo fala, escuta e evolui em cada aula.",
     image: ASSETS.photos.comunidade[0],
   },
 ];
 
 const journey = [
-  { icon: ASSETS.icons.alvo, title: "Diagnóstico", description: "Avaliamos seu nível atual e objetivo." },
-  { icon: ASSETS.icons.conversas, title: "Imersão", description: "Você fala desde o primeiro dia." },
-  { icon: ASSETS.icons.livro, title: "Prática", description: "Material aplicado a situações reais." },
-  { icon: ASSETS.icons.pessoas, title: "Acompanhamento", description: "Suporte individual constante." },
-  { icon: ASSETS.icons.rede, title: "Vivência", description: "Conversation clubs e eventos." },
+  { icon: ASSETS.iconsWhite.alvo, title: "Diagnóstico", description: "Avaliamos seu nível e seu objetivo." },
+  { icon: ASSETS.iconsWhite.conversas, title: "Imersão", description: "Você fala desde o primeiro dia." },
+  { icon: ASSETS.iconsWhite.estrela, title: "Prática", description: "Inglês aplicado a situações reais." },
+  { icon: ASSETS.iconsWhite.pessoas, title: "Acompanhamento", description: "Suporte individual constante." },
+  { icon: ASSETS.iconsWhite.ambiente, title: "Vivência", description: "Conversation clubs e eventos." },
 ];
 
 export default function MethodologyPage() {
@@ -89,8 +89,8 @@ export default function MethodologyPage() {
                 />
               </div>
               <div>
-                <div className="w-14 h-14 rounded-xl bg-[var(--accent)]/10 flex items-center justify-center mb-5">
-                  <Image src={p.icon} alt="" width={32} height={32} />
+                <div className="w-14 h-14 rounded-xl bg-[var(--accent)] flex items-center justify-center mb-5">
+                  <Image src={p.icon} alt="" width={32} height={32} className="h-8 w-auto" />
                 </div>
                 <h2 className="heading-display text-3xl lg:text-4xl">{p.title}</h2>
                 <p className="mt-5 text-[var(--text-secondary)] leading-relaxed">
@@ -113,14 +113,11 @@ export default function MethodologyPage() {
 
           <ol className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {journey.map((s, i) => (
-              <li
-                key={s.title}
-                className="bg-[var(--bg-elevated)] border border-white/5 rounded-2xl p-6 relative"
-              >
+              <li key={s.title} className="glass-panel p-6 relative">
                 <div className="absolute top-4 right-4 text-[var(--accent)]/30 font-serif font-bold text-3xl">
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <Image src={s.icon} alt="" width={36} height={36} className="mb-4" />
+                <Image src={s.icon} alt="" width={36} height={36} className="h-9 w-auto mb-4" />
                 <h3 className="font-bold text-white">{s.title}</h3>
                 <p className="text-[var(--text-secondary)] text-sm mt-2 leading-relaxed">
                   {s.description}
