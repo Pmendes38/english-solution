@@ -16,7 +16,7 @@ function VideoCard({ item }) {
   };
 
   return (
-    <article className="group relative rounded-2xl overflow-hidden bg-[var(--bg-elevated)] aspect-[4/5] border border-white/5">
+    <article className="group relative rounded-2xl overflow-hidden bg-[var(--bg-elevated)] aspect-[9/16] border border-white/5">
       {item.videoSrc ? (
         <video
           ref={videoRef}
@@ -24,6 +24,9 @@ function VideoCard({ item }) {
           poster={item.poster}
           controls={playing}
           playsInline
+          preload="metadata"
+          onPause={() => setPlaying(false)}
+          onEnded={() => setPlaying(false)}
           className="absolute inset-0 w-full h-full object-cover"
         />
       ) : item.poster ? (
@@ -94,7 +97,7 @@ export default function VideoTestimonials() {
               hidden: {},
               visible: { transition: { staggerChildren: 0.12 } },
             }}
-            className="lg:w-2/3 grid sm:grid-cols-3 gap-5 w-full"
+            className="lg:w-2/3 w-full flex flex-wrap justify-center gap-5"
           >
             {videoTestimonials.map((item) => (
               <motion.div
@@ -103,6 +106,7 @@ export default function VideoTestimonials() {
                   hidden: { opacity: 0, y: 28 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
                 }}
+                className="w-full max-w-[320px]"
               >
                 <VideoCard item={item} />
               </motion.div>

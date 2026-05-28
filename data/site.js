@@ -226,22 +226,16 @@ export const reviews = [
 
 export const videoTestimonials = [
   {
-    name: "Lucas A.",
-    role: "Estudante de TI · Inglês para o trabalho",
-    poster: "/brand/photos/depoimento-2.png",
-    videoSrc: "",
+    name: "André",
+    role: "Aluno English Solution",
+    poster: "/brand/videos/depoimento-andre-poster.jpg",
+    videoSrc: "/brand/videos/depoimento-andre.mp4",
   },
   {
-    name: "Marina C.",
-    role: "Estudante de TI · Inglês para o trabalho",
-    poster: "/brand/photos/depoimento-3.png",
-    videoSrc: "",
-  },
-  {
-    name: "Rafael S.",
-    role: "Estudante de TI · Inglês para o trabalho",
-    poster: "/brand/photos/depoimento-4.png",
-    videoSrc: "",
+    name: "Rafael",
+    role: "Aluno English Solution",
+    poster: "/brand/videos/depoimento-rafael-2-poster.jpg",
+    videoSrc: "/brand/videos/depoimento-rafael-2.mp4",
   },
 ];
 
