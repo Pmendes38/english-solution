@@ -97,16 +97,15 @@ export default function VideoTestimonials() {
               hidden: {},
               visible: { transition: { staggerChildren: 0.12 } },
             }}
-            className="lg:w-2/3 w-full flex flex-wrap justify-center gap-5"
+            className="lg:w-2/3 w-full grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
             {videoTestimonials.map((item) => (
               <motion.div
-                key={item.name}
+                key={item.videoSrc}
                 variants={{
                   hidden: { opacity: 0, y: 28 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.55 } },
                 }}
-                className="w-full max-w-[320px]"
               >
                 <VideoCard item={item} />
               </motion.div>
