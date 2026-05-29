@@ -6,9 +6,9 @@ import Reveal from "@/components/motion/Reveal";
 export default function Community() {
   return (
     <section className="py-16 lg:py-24">
-      <div className="container-x grid lg:grid-cols-[869fr_839fr] gap-10 lg:gap-16 items-start">
+      <div className="container-x grid lg:grid-cols-[460px_1fr] gap-10 lg:gap-14 items-center">
         <Reveal>
-          <div className="grid grid-cols-2 gap-3 max-w-[420px]">
+          <div className="grid grid-cols-2 gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ASSETS.photos.comunidade[1]}
