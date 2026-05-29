@@ -237,6 +237,12 @@ export const videoTestimonials = [
     poster: "/brand/videos/depoimento-rafael-poster.jpg",
     videoSrc: "/brand/videos/depoimento-rafael.mp4",
   },
+  {
+    name: "Rafael",
+    role: "Depoimento 100% em inglês",
+    poster: "/brand/videos/depoimento-rafael-ingles-poster.jpg",
+    videoSrc: "/brand/videos/depoimento-rafael-ingles.mp4",
+  },
 ];
 
 export const methodologyPillars = [
