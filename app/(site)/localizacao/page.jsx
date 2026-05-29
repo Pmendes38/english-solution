@@ -81,7 +81,7 @@ export default function LocationPage() {
                 key={src}
                 src={src}
                 alt={`Ambiente English Solution ${i + 1}`}
-                className="w-full h-72 object-cover rounded-2xl border border-white/5"
+                className="w-full h-72 object-contain rounded-2xl border border-white/5 bg-[var(--bg-elevated)]"
               />
             ))}
           </div>

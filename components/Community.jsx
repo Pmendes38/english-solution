@@ -9,28 +9,28 @@ export default function Community() {
       <div className="container-x grid lg:grid-cols-[869fr_839fr] gap-10 lg:gap-16 items-start">
         <Reveal>
           <div className="grid grid-cols-2 gap-3">
-            <div className="col-span-2 rounded-2xl overflow-hidden">
+            <div className="col-span-2 rounded-2xl overflow-hidden bg-[var(--bg-elevated)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={ASSETS.photos.comunidade[0]}
                 alt="Sala de aula English Solution"
-                className="w-full aspect-[869/302] object-cover block"
+                className="w-full aspect-[869/302] object-contain block"
               />
             </div>
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden bg-[var(--bg-elevated)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={ASSETS.photos.comunidade[1]}
                 alt="Comunidade English Solution"
-                className="w-full aspect-[427/227] object-cover block"
+                className="w-full aspect-[427/227] object-contain block"
               />
             </div>
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden bg-[var(--bg-elevated)]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={ASSETS.photos.comunidade[2]}
                 alt="Comunidade English Solution"
-                className="w-full aspect-[434/227] object-cover block"
+                className="w-full aspect-[434/227] object-contain block"
               />
             </div>
           </div>

@@ -37,12 +37,12 @@ export default function DifferentialsPage() {
                 i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
               }`}
             >
-              <div className="relative rounded-3xl overflow-hidden border border-white/5 aspect-[5/4]">
+              <div className="relative rounded-3xl overflow-hidden border border-white/5 aspect-[5/4] bg-[var(--bg-elevated)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={photos[i % photos.length]}
                   alt={d.title}
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-contain"
                 />
               </div>
               <div>

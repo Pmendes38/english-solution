@@ -2,6 +2,7 @@ import PageHeader from "@/components/PageHeader";
 import RafaelEvolution from "@/components/RafaelEvolution";
 import GoogleReviews from "@/components/GoogleReviews";
 import VideoTestimonials from "@/components/VideoTestimonials";
+import SchoolGallery from "@/components/SchoolGallery";
 import CTA from "@/components/CTA";
 import { contact } from "@/data/site";
 
@@ -31,6 +32,7 @@ export default function TestimonialsPage() {
 
       <RafaelEvolution />
       <VideoTestimonials />
+      <SchoolGallery />
       <GoogleReviews />
       <CTA />
     </>
