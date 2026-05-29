@@ -6,8 +6,8 @@ import Reveal from "@/components/motion/Reveal";
 export default function Community() {
   return (
     <section className="py-16 lg:py-24">
-      <div className="container-x grid lg:grid-cols-[460px_1fr] gap-10 lg:gap-14 items-center">
-        <Reveal>
+      <div className="container-x flex flex-col lg:flex-row gap-10 lg:gap-14 items-center justify-center">
+        <Reveal className="w-full lg:w-[720px] flex-shrink-0">
           <div className="grid grid-cols-2 gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -30,7 +30,7 @@ export default function Community() {
           </div>
         </Reveal>
 
-        <Reveal delay={0.1}>
+        <Reveal delay={0.1} className="w-full lg:max-w-[480px]">
           <span className="eyebrow">MUITO ALÉM DA SALA DE AULA</span>
           <h2 className="heading-display mt-5 text-4xl lg:text-5xl">
             Uma comunidade que te<br /> inspira a ir mais longe
