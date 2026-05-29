@@ -80,12 +80,12 @@ export default function MethodologyPage() {
                 i % 2 === 1 ? "lg:[&>div:first-child]:order-2" : ""
               }`}
             >
-              <div className="relative rounded-3xl overflow-hidden border border-white/5">
+              <div className="relative rounded-3xl overflow-hidden border border-white/5 aspect-[4/3]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={p.image}
                   alt={p.title}
-                  className="w-full h-auto block"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
               <div>

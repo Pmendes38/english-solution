@@ -8,16 +8,25 @@ export default function Community() {
     <section className="py-16 lg:py-24">
       <div className="container-x grid lg:grid-cols-[869fr_839fr] gap-10 lg:gap-16 items-start">
         <Reveal>
-          <div className="columns-2 gap-3 [column-fill:_balance]">
-            {ASSETS.photos.comunidade.map((src) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                key={src}
-                src={src}
-                alt="Comunidade English Solution"
-                className="mb-3 w-full h-auto block rounded-2xl border border-white/5 break-inside-avoid"
-              />
-            ))}
+          <div className="grid grid-cols-2 gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={ASSETS.photos.comunidade[1]}
+              alt="Comunidade English Solution"
+              className="w-full aspect-[4/5] object-cover block rounded-2xl border border-white/5"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={ASSETS.photos.comunidade[2]}
+              alt="Comunidade English Solution"
+              className="w-full aspect-[4/5] object-cover block rounded-2xl border border-white/5"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={ASSETS.photos.comunidade[0]}
+              alt="Sala de aula English Solution"
+              className="col-span-2 w-full aspect-[16/9] object-cover block rounded-2xl border border-white/5"
+            />
           </div>
         </Reveal>
 

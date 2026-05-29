@@ -74,14 +74,14 @@ export default function LocationPage() {
             />
           </div>
 
-          <div className="columns-1 sm:columns-3 gap-5 mt-12">
+          <div className="grid sm:grid-cols-3 gap-5 mt-12">
             {ASSETS.photos.comunidade.map((src, i) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={src}
                 src={src}
                 alt={`Ambiente English Solution ${i + 1}`}
-                className="mb-5 w-full h-auto block rounded-2xl border border-white/5 break-inside-avoid"
+                className="w-full aspect-[4/5] object-cover object-center rounded-2xl border border-white/5"
               />
             ))}
           </div>
