@@ -8,7 +8,7 @@ export default function Community() {
     <section className="py-16 lg:py-24">
       <div className="container-x grid lg:grid-cols-[869fr_839fr] gap-10 lg:gap-16 items-start">
         <Reveal>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-3 max-w-[420px]">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={ASSETS.photos.comunidade[1]}
