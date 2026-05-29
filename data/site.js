@@ -234,8 +234,8 @@ export const videoTestimonials = [
   {
     name: "Rafael",
     role: "Aluno English Solution",
-    poster: "/brand/videos/depoimento-rafael-2-poster.jpg",
-    videoSrc: "/brand/videos/depoimento-rafael-2.mp4",
+    poster: "/brand/videos/depoimento-rafael-poster.jpg",
+    videoSrc: "/brand/videos/depoimento-rafael.mp4",
   },
 ];
 

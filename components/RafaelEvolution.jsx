@@ -51,8 +51,8 @@ export default function RafaelEvolution() {
             <div className="relative mx-auto w-full max-w-[380px] aspect-[9/16] rounded-3xl overflow-hidden glass-panel">
               <video
                 ref={videoRef}
-                src="/brand/videos/depoimento-rafael.mp4"
-                poster="/brand/videos/depoimento-rafael-poster.jpg"
+                src="/brand/videos/depoimento-rafael-ingles.mp4"
+                poster="/brand/videos/depoimento-rafael-ingles-poster.jpg"
                 controls={playing}
                 playsInline
                 preload="metadata"
