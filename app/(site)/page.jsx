@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import MetricsStrip from "@/components/MetricsStrip";
+import CertificationsStrip from "@/components/CertificationsStrip";
 import GoogleReviews from "@/components/GoogleReviews";
 import VideoTestimonials from "@/components/VideoTestimonials";
 import Methodology from "@/components/Methodology";
@@ -15,6 +16,7 @@ export default function HomePage() {
     <>
       <Hero />
       <MetricsStrip />
+      <CertificationsStrip />
       <GoogleReviews />
       <VideoTestimonials />
       <Methodology />

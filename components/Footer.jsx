@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { contact, schedule } from "@/data/site";
 import { ASSETS } from "@/lib/assets";
+import CertificationsStrip from "@/components/CertificationsStrip";
 
 const featuredFooterCourses = [
   { slug: "intensivo-de-ferias", label: "Intensivo de Férias" },
@@ -44,6 +45,7 @@ export default function Footer() {
           <ul className="space-y-3 text-[var(--text-secondary)] text-sm">
             <li><Link href="/metodologia" className="hover:text-white transition-colors">Metodologia</Link></li>
             <li><Link href="/diferenciais" className="hover:text-white transition-colors">Diferenciais</Link></li>
+            <li><Link href="/certificacoes" className="hover:text-white transition-colors">Certificações</Link></li>
             <li><Link href="/depoimentos" className="hover:text-white transition-colors">Depoimentos</Link></li>
             <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
             <li><Link href="/duvidas" className="hover:text-white transition-colors">Dúvidas</Link></li>
@@ -92,6 +94,26 @@ export default function Footer() {
               </li>
             ))}
           </ul>
+        </div>
+      </div>
+
+      {/* Selo Authorized Centers ETS — padrão ATTC */}
+      <div className="border-t border-white/5">
+        <div className="container-x py-7 flex flex-col lg:flex-row items-center justify-between gap-5">
+          <div className="flex flex-col items-center lg:items-start gap-2">
+            <CertificationsStrip variant="footer" />
+            <span className="ets-mark text-[10px] uppercase tracking-widest text-[var(--text-muted)]">
+              Authorized Centers TOEFL TYS | TOEIC Testing
+            </span>
+          </div>
+          <p className="text-[var(--text-muted)] text-[11px] leading-relaxed max-w-md text-center lg:text-right">
+            <span className="ets-mark-first">TOEFL</span>
+            <sup>®</sup>, <span className="ets-mark-first">TOEIC</span>
+            <sup>®</sup> e respectivos logotipos são marcas registradas da{" "}
+            <span className="ets-mark-first">ETS</span>
+            <sup>®</sup>, utilizadas sob licença para o centro autorizado
+            English Solution.
+          </p>
         </div>
       </div>
 

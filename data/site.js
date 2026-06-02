@@ -612,9 +612,9 @@ export const navigation = {
       })),
     },
     { label: "Metodologia", href: "/metodologia" },
+    { label: "Certificações", href: "/certificacoes" },
     { label: "Diferenciais", href: "/diferenciais" },
     { label: "Depoimentos", href: "/depoimentos" },
-    { label: "Blog", href: "/blog" },
     { label: "Contato", href: "/contato" },
   ],
 };
