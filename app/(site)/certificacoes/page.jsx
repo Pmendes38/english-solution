@@ -7,7 +7,7 @@ import { ASSETS } from "@/lib/assets";
 export const metadata = {
   title: "Certificações Internacionais — TOEFL e TOEIC",
   description:
-    "Único centro autorizado a aplicar TOEFL e TOEIC em um raio de 30 km de Valparaíso de Goiás. Certificações reconhecidas em mais de 150 países.",
+    "Único centro autorizado a aplicar TOEFL e TOEIC no entorno sul de Brasília. Certificações reconhecidas em mais de 150 países, aplicadas em Valparaíso de Goiás.",
 };
 
 const toeicSections = [
@@ -55,7 +55,7 @@ export default function CertificacoesPage() {
     <>
       <PageHeader
         eyebrow="CERTIFICAÇÕES INTERNACIONAIS"
-        title="O único centro aplicador oficial em 30 km."
+        title="O único centro aplicador oficial no entorno sul de Brasília."
         description={
           <>
             A English Solution é Authorized Center{" "}
@@ -86,29 +86,27 @@ export default function CertificacoesPage() {
         <div className="container-x">
           <div className="glass-panel rounded-2xl px-6 lg:px-10 py-8 grid sm:grid-cols-2 gap-8 items-center">
             <div className="flex items-center justify-center sm:justify-end gap-5">
-              <div className="bg-white rounded-2xl px-6 py-4 flex items-center">
+              <div className="bg-white rounded-2xl px-7 py-5 flex items-center">
                 <Image
                   src={ASSETS.certifications.toefl}
                   alt="TOEFL"
-                  width={200}
-                  height={80}
-                  className="h-14 w-auto"
+                  width={240}
+                  height={96}
+                  className="h-12 w-auto"
                 />
               </div>
-              <div className="bg-white rounded-2xl px-6 py-4 flex items-center">
+              <div className="bg-white rounded-2xl px-7 py-5 flex items-center">
                 <Image
                   src={ASSETS.certifications.toeic}
                   alt="TOEIC"
-                  width={200}
-                  height={80}
-                  className="h-10 w-auto"
+                  width={240}
+                  height={96}
+                  className="h-[30px] w-auto"
                 />
               </div>
             </div>
             <div className="text-center sm:text-left">
-              <span className="ets-mark text-[11px] uppercase tracking-widest text-[var(--accent)]">
-                Authorized Centers TOEFL TYS | TOEIC Testing
-              </span>
+              <span className="eyebrow">CREDENCIAMENTO OFICIAL</span>
               <p className="mt-3 text-white text-lg lg:text-xl leading-snug">
                 Credenciada pela <span className="ets-mark-first">ETS</span>
                 <sup>®</sup>, instituição responsável pelos exames mais
@@ -176,9 +174,9 @@ export default function CertificacoesPage() {
                 <Image
                   src={ASSETS.certifications.toeic}
                   alt="TOEIC"
-                  width={220}
-                  height={90}
-                  className="h-12 w-auto"
+                  width={240}
+                  height={96}
+                  className="h-[30px] w-auto"
                 />
               </div>
               <span className="eyebrow">PARA O MERCADO DE TRABALHO</span>
@@ -231,9 +229,9 @@ export default function CertificacoesPage() {
                 <Image
                   src={ASSETS.certifications.toefl}
                   alt="TOEFL"
-                  width={220}
-                  height={90}
-                  className="h-14 w-auto"
+                  width={240}
+                  height={96}
+                  className="h-12 w-auto"
                 />
               </div>
               <span className="eyebrow">PARA ESCOLAS E UNIVERSIDADES</span>

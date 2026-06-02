@@ -100,12 +100,7 @@ export default function Footer() {
       {/* Selo Authorized Centers ETS — padrão ATTC */}
       <div className="border-t border-white/5">
         <div className="container-x py-7 flex flex-col lg:flex-row items-center justify-between gap-5">
-          <div className="flex flex-col items-center lg:items-start gap-2">
-            <CertificationsStrip variant="footer" />
-            <span className="ets-mark text-[10px] uppercase tracking-widest text-[var(--text-muted)]">
-              Authorized Centers TOEFL TYS | TOEIC Testing
-            </span>
-          </div>
+          <CertificationsStrip variant="footer" />
           <p className="text-[var(--text-muted)] text-[11px] leading-relaxed max-w-md text-center lg:text-right">
             <span className="ets-mark-first">TOEFL</span>
             <sup>®</sup>, <span className="ets-mark-first">TOEIC</span>
