@@ -16,7 +16,6 @@ export default function HomePage() {
     <>
       <Hero />
       <MetricsStrip />
-      <CertificationsStrip />
       <GoogleReviews />
       <VideoTestimonials />
       <Methodology />
@@ -26,6 +25,7 @@ export default function HomePage() {
       <LocationPreview />
       <CTA />
       <FAQ />
+      <CertificationsStrip />
     </>
   );
 }

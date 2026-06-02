@@ -101,7 +101,7 @@ export default function CertificacoesPage() {
                   alt="TOEIC"
                   width={240}
                   height={96}
-                  className="h-[30px] w-auto"
+                  className="h-12 w-auto"
                 />
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function CertificacoesPage() {
                   alt="TOEIC"
                   width={240}
                   height={96}
-                  className="h-[30px] w-auto"
+                  className="h-12 w-auto"
                 />
               </div>
               <span className="eyebrow">PARA O MERCADO DE TRABALHO</span>

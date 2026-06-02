@@ -50,7 +50,7 @@ export default function CertificationsStrip({ variant = "hero" }) {
       >
         <TOEFLLogo className="h-7 w-auto" />
         <span className="block h-7 w-px bg-black/15" aria-hidden="true" />
-        <TOEICLogo className="h-[18px] w-auto" />
+        <TOEICLogo className="h-7 w-auto" />
         <span className="ets-mark text-[10px] uppercase tracking-widest text-[var(--brand-gray-dark)] hidden sm:inline whitespace-nowrap pl-1 border-l border-black/15">
           Authorized Center
         </span>
@@ -86,10 +86,10 @@ export default function CertificationsStrip({ variant = "hero" }) {
             {/* Logos balanceados em pílulas brancas */}
             <div className="mt-6 flex items-center gap-3">
               <div className="bg-white rounded-xl px-4 py-2.5 flex items-center">
-                <TOEFLLogo className="h-7 w-auto" />
+                <TOEFLLogo className="h-8 w-auto" />
               </div>
               <div className="bg-white rounded-xl px-4 py-2.5 flex items-center">
-                <TOEICLogo className="h-[18px] w-auto" />
+                <TOEICLogo className="h-8 w-auto" />
               </div>
             </div>
 
