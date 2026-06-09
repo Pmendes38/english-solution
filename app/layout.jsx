@@ -40,6 +40,12 @@ export default function RootLayout({ children }) {
       lang="pt-BR"
       className={`${montserrat.variable} ${tinos.variable}`}
     >
+      <head>
+        <meta
+          name="facebook-domain-verification"
+          content="am0z9anc242hdyj8f4gv8ebkbf593m"
+        />
+      </head>
       <body className="bg-[var(--bg-base)] text-[var(--text-primary)] font-sans overflow-x-hidden antialiased">
         {children}
         <Analytics />
